@@ -13,7 +13,7 @@ export const clip = new HTMLClip({
     <div class="textbox">
         <div class="text1">Smart</div>
         <div class="text2"> ${saparateLetters("Sale")} ${saparateLetters("Promo")}</div>
-        <div class="text3"><p>envato</p></div>
+        <div class="text3"><p>company</p></div>
     </div>
     <div class="circle big-circle"></div>
     <div class="circle small-circle"></div>
@@ -35,7 +35,7 @@ export const clip = new HTMLClip({
                 <div class="color black"></div>
                 <div class="color blue"></div>
             </div>
-            <div class="price-tag"><p>235$</p></div>
+            <div class="price-tag"><p>${saparateLetters("235$")}</p></div>
         </div>
         <div class="image"><img id="smartwatch-img" src="https://github.com/ElisavetAmpatzidou/clip/blob/main/demo/images/smartwatch.png?raw=true" alt="smartwatch-image"></div>
         <div class="features">
@@ -93,7 +93,7 @@ export const clip = new HTMLClip({
             <div class="color black"></div>
             <div class="color blue"></div>
             </div>
-            <div class="price-tag"><p>313$</p></div>
+            <div class="price-tag"><p>${saparateLetters("313$")}</p></div>
         </div>
     </div>
     <div class="extra-container container4">
@@ -110,7 +110,7 @@ export const clip = new HTMLClip({
                 <div class="color black"></div>
                 <div class="color blue"></div>
             </div>
-            <div class="price-tag"><p>235$</p></div>
+            <div class="price-tag"><p>${saparateLetters("235$")}</p></div>
         </div>
         <div class="image"><img id="band-img" src="https://github.com/ElisavetAmpatzidou/clip/blob/main/demo/images/band.png?raw=true" alt="smartwatch-image"></div>
         <div class="features">
@@ -153,6 +153,7 @@ export const clip = new HTMLClip({
     font-family: Lato;
     overflow: hidden;
     width:0%;
+    opacity:0;
   }
   .text2{
     position:absolute;
@@ -171,24 +172,27 @@ export const clip = new HTMLClip({
   }
   .text3{
     position:absolute;
-    top:65%;
+    top:55%;
     left:50%;
     transform :translateX(-50%);
     font-size: 25px;
     font-family: Ubuntu;
-    display:flex;
-    justify-content:center;
-    align-items: center;
     color: white;
     background-color: #0098ED;
-    width:0%;
-    height:0px;
+    width:30px;
+    height:30px;
+    border-radius:8px;
+    opacity:0;
   }
   p{
+    position:absolute;
     font-size: 0px;
     font-family: Ubuntu;
     padding:0;
     margin:0;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
   }
   .circle{
     display: block;
@@ -222,23 +226,23 @@ export const clip = new HTMLClip({
 }
 .line1 {
   position: absolute;
-  top: 80px;
-  left: 100px;
+  top: 90px;
+  left: 150px;
 }
 .line2 {
   position: absolute;
-  top: 110px;
+  top: 120px;
   right: 560px;
 }
 .line3 {
   position: absolute;
   bottom: 110px;
-  left:560px;
+  left:590px;
 } 
 .line4 {
   position: absolute;
   bottom: 80px;
-  right:120px;
+  right:130px;
 }
 .extra-container{
   position:absolute;
@@ -284,7 +288,6 @@ export const clip = new HTMLClip({
   position:absolute;
   top:190%;
 }
-
 .container3 .title, .container3 .info{
   text-align:right;
 }
@@ -321,16 +324,19 @@ export const clip = new HTMLClip({
   background-color: blue;
 }
 .price-tag{
+
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
     margin-top:10px;
-    display:flex;
-    justify-content:center;
-    align-items: center;
     color: white;
     background-color: #0098ED;
     width:0px;
     height:0px;
     opacity: 0;
 }
+
 .container2 .price-tag{
   position:absolute;
   top:115%;
@@ -440,14 +446,58 @@ const MyIncident2 = new CSSEffect(
     easing: "linear",
   }
 );
-const MyIncident3 = new CSSEffect(
+const MyIncident3a = new CSSEffect(
   {
     animatedAttrs: {
-    width:"80px"
+    width:"80px",
+    top:"75px",
+    left:"70px"
     },
   },
   {
-    selector: ".line",
+    selector: ".line1",
+    duration: 2000,
+    easing: "linear",
+  }
+);
+const MyIncident3b = new CSSEffect(
+  {
+    animatedAttrs: {
+    width:"80px",
+    top:"95px",
+    right:"610px"
+    },
+  },
+  {
+    selector: ".line2",
+    duration: 2000,
+    easing: "linear",
+  }
+);
+const MyIncident3c = new CSSEffect(
+  {
+    animatedAttrs: {
+    width:"80px",
+    bottom:"80px",
+    left:"680px"
+    },
+  },
+  {
+    selector: ".line3",
+    duration: 2000,
+    easing: "linear",
+  }
+);
+const MyIncident3d = new CSSEffect(
+  {
+    animatedAttrs: {
+    width:"80px",
+    bottom:"60px",
+    right:"60px"
+    },
+  },
+  {
+    selector: ".line4",
     duration: 2000,
     easing: "linear",
   }
@@ -455,8 +505,20 @@ const MyIncident3 = new CSSEffect(
 const MyIncident4 = new CSSEffect(
   {
     animatedAttrs: {
-      width:'100%',
-      right:"50%"
+      right:"50%",
+      opacity:1
+    },
+  },
+  {
+    selector: ".text1",
+    duration:2000,
+    easing: "linear",
+  }
+);
+const MyIncident4b = new CSSEffect(
+  {
+    animatedAttrs: {
+      width:"100%",
     },
   },
   {
@@ -482,27 +544,40 @@ const MyIncident5 = new CSSEffect(
 const MyIncident6 = new CSSEffect(
   {
     animatedAttrs: {
-      width: "110px",
-      height:"30px",
-      padding:'5px',
-      borderRadius:"8px"
+      opacity:1,
+      
     },
   },
   {
     selector: ".text3",
-    duration: 2000,
+    duration:600,
     easing: "linear",
   }
 );
+const MyIncident6b = new CSSEffect(
+  {
+    animatedAttrs: {
+      width: "110px",
+      padding:'5px',
+      top:"65%"
+    },
+  },
+  {
+    selector: ".text3",
+    duration:600,
+    easing: "linear",
+  }
+);
+
 const MyIncident7 = new CSSEffect(
   {
     animatedAttrs: {
-      fontSize:'25px'
+      fontSize:"25px"
     },
   },
   {
     selector: ".text3>p",
-    duration: 2000,
+    duration: 600,
     easing: "linear",
   }
 );
@@ -510,12 +585,50 @@ const MyIncident7 = new CSSEffect(
 const MyIncident9 = new CSSEffect(
   {
     animatedAttrs: {
-      fontSize:'1000%',
+      fontSize:'900%',
       opacity:0
     },
   },
   {
     selector: ".text1,.text2,.text3",
+    duration: 200,
+    easing: "linear",
+  }
+);
+const MyIncident9b = new CSSEffect(
+  {
+    animatedAttrs: {
+     top:"10%"
+    },
+  },
+  {
+    selector: ".text1",
+    duration: 200,
+    easing: "linear",
+  }
+);
+const MyIncident9c = new CSSEffect(
+  {
+    animatedAttrs: {
+     top:"85%"
+    },
+  },
+  {
+    selector: ".text3",
+    duration: 200,
+    easing: "linear",
+  }
+);
+const MyIncident9d = new CSSEffect(
+  {
+    animatedAttrs: {
+     width:"200px",
+     height:"50px",
+     fontSize:"30px"
+    },
+  },
+  {
+    selector: ".text3,.text3>p",
     duration: 200,
     easing: "linear",
   }
@@ -826,19 +939,20 @@ const MyIncident20= new CSSEffect(
   },
   {
     selector: ".container2 .price-tag",
-    duration: 2000,
+    duration: 500,
     easing: "linear",
   }
 );
 const MyIncident21 = new CSSEffect(
   {
     animatedAttrs: {
-      fontSize:'15px'
+      opacity:1
     },
   },
   {
-    selector: ".container2 .price-tag>p",
-    duration: 2000,
+    selector: ".container2 .price-tag .letter",
+    duration: 300,
+    delay:"@stagger(500, 1000)",
     easing: "linear",
   }
 );
@@ -1149,19 +1263,20 @@ const MyIncident34= new CSSEffect(
   },
   {
     selector: ".container3 .price-tag",
-    duration: 2000,
+    duration: 500,
     easing: "linear",
   }
 );
 const MyIncident35 = new CSSEffect(
   {
     animatedAttrs: {
-      fontSize:'15px'
+      opacity:1
     },
   },
   {
-    selector: ".container3 .price-tag>p",
-    duration: 2000,
+    selector: ".container3 .price-tag .letter",
+    duration: 300,
+    delay:"@stagger(500, 1000)",
     easing: "linear",
   }
 );
@@ -1525,19 +1640,20 @@ const MyIncident51= new CSSEffect(
   },
   {
     selector: ".container4 .price-tag",
-    duration: 2000,
+    duration: 500,
     easing: "linear",
   }
 );
 const MyIncident52 = new CSSEffect(
   {
     animatedAttrs: {
-      fontSize:'15px'
+      opacity:1
     },
   },
   {
-    selector: ".container4 .price-tag>p",
-    duration: 2000,
+    selector: ".container4 .price-tag .letter",
+    duration: 300,
+    delay:"@stagger(500, 1000)",
     easing: "linear",
   }
 );
@@ -1550,7 +1666,7 @@ const MyIncident53 = new CSSEffect(
     },
   },
   {
-    selector: ".container4 .title, .container4 .info,.container4 .color-tag, .container4 .price-tag>p, .container4 .f-text",
+    selector: ".container4 .title, .container4 .info,.container4 .color-tag, .container4 .price-tag .letter, .container4 .f-text",
     duration: 1000,
     easing: "linear",
   }
@@ -1592,7 +1708,8 @@ const MyIncident56 = new CSSEffect(
       left:"35%",
       width:"0%",
       height:"0%",
-      border:"1px solid white"
+      border:"1px solid white",
+      opacity:0
     },
   },
   {
@@ -1669,12 +1786,20 @@ const MyIncident57d = new CSSEffect(
 
 clip.addIncident(MyIncident1, 0);
 clip.addIncident(MyIncident2, 0);
-clip.addIncident(MyIncident3, 0);
+clip.addIncident(MyIncident3a, 0);
+clip.addIncident(MyIncident3b, 0);
+clip.addIncident(MyIncident3c, 0);
+clip.addIncident(MyIncident3d, 0);
 clip.addIncident(MyIncident4, 0);
+clip.addIncident(MyIncident4b,1300);
 clip.addIncident(MyIncident5, 0);
 clip.addIncident(MyIncident6, 0);
-clip.addIncident(MyIncident7, 0);
+clip.addIncident(MyIncident6b, 0);
+clip.addIncident(MyIncident7, 100);
 clip.addIncident(MyIncident9, 2700);
+clip.addIncident(MyIncident9b, 2700);
+clip.addIncident(MyIncident9c, 2700);
+clip.addIncident(MyIncident9d, 2700);
 clip.addIncident(MyIncident10, 2700);
 
 clip.addIncident(MyIncident11, 2800);

@@ -136,7 +136,7 @@ export const clip = new HTMLClip({
 `,
   css: `
   .container {
-    background-color: #e7eefe;
+    background-color: #284AC7;
     width: 800px;
     height: 450px;
     position: relative;
@@ -154,6 +154,7 @@ export const clip = new HTMLClip({
     overflow: hidden;
     width:0%;
     opacity:0;
+    color:#865FD2;
   }
   .text2{
     position:absolute;
@@ -165,6 +166,7 @@ export const clip = new HTMLClip({
     font-weight:bold;
     align-self:flex-start;
     white-space:nowrap;
+    color:#865FD2;
   }
   .letter{
    display:inline-block;
@@ -178,7 +180,7 @@ export const clip = new HTMLClip({
     font-size: 25px;
     font-family: Ubuntu;
     color: white;
-    background-color: #0098ED;
+    background-color: #865FD2;
     width:30px;
     height:30px;
     border-radius:8px;
@@ -196,7 +198,7 @@ export const clip = new HTMLClip({
   }
   .circle{
     display: block;
-    background-color:#e7eefe;
+    background-color:#284AC7;
     border-radius:200px;
   }
   .big-circle{
@@ -205,7 +207,7 @@ export const clip = new HTMLClip({
     right:-30%;
     width:300px;
     height:300px;
-    border: 20px solid white;
+    border: 20px solid #0A0144;
     opacity:0;
   }
 .small-circle{
@@ -214,12 +216,12 @@ export const clip = new HTMLClip({
   right: 83%;
   width:0;
   height:0;
-  border: 3px solid white;
+  border: 3px solid #0A0144;
   opacity:0;
   }
 .line {
   width: 0px;
-  background-color: #0098ed;
+  background-color: #0A0144;
   height: 8px;
   border-radius: 15px;
   opacity:0.3;
@@ -262,9 +264,13 @@ export const clip = new HTMLClip({
   right:40%;
   transform :translateX(60%);
 }
+.container4 .informations{
+  height:80%;
+}
 .title{
   font-size: 60px;
   font-weight:bold;
+  color:#865FD2;
 }
 .container4 .title1{
   opacity:0;
@@ -280,13 +286,14 @@ export const clip = new HTMLClip({
   opacity:0;
   font-size: 15px;
   margin-top:10px;
-  color:#363434;
+  color:white;
   height:35%;
   
 }
 .container4 .info{
   position:absolute;
-  top:190%;
+  top:55%;
+  transform:translateY(-45%);
 }
 .container3 .title, .container3 .info{
   text-align:right;
@@ -297,12 +304,15 @@ export const clip = new HTMLClip({
   height:20px;
   font-size:15px;
   font-weight:bold;
+  color:white;
 }
 .container3 .color-tag{
   left:60%;
 }
 .container4 .color-tag{
-  top:310%;
+  top:63%;
+  transform:translate(-37%);
+  left:5%;
 }
 .color{
   position:absolute;
@@ -324,31 +334,31 @@ export const clip = new HTMLClip({
   background-color: blue;
 }
 .price-tag{
-
   display:flex;
   flex-direction:row;
   justify-content:center;
   align-items:center;
     margin-top:10px;
     color: white;
-    background-color: #0098ED;
+    background-color: #865FD2;
     width:0px;
     height:0px;
     opacity: 0;
 }
-
 .container2 .price-tag{
   position:absolute;
   top:115%;
 }
 .container3 .price-tag{
   position:absolute;
-  left:60%;
+  left:70%;
   top:115%;
 }
 .container4 .price-tag{
   position:absolute;
-  top:360%;
+  top:73%;
+  transform:translate(-27%);
+  left:5%;
 }
 .image{
   width:20%;
@@ -356,6 +366,9 @@ export const clip = new HTMLClip({
   left:50%;
   top:50%;
   transform: translate(-50%, -50%);
+}
+#smartwatch-img{
+  transform: rotate(90deg);
 }
 .container2 img, .container4 img{
   width:0%;
@@ -387,11 +400,13 @@ export const clip = new HTMLClip({
   white-space:nowrap;
   gap: 10px;
   margin-bottom:5px;
+  color:#865FD2;
 }
 .bullet{
   width:0%;
   height:0%;
-  background-color: #0098ED;
+  background-color: #0A0144;
+  opacity:0.5;
 }
 .f-text{
   opacity:0;
@@ -400,7 +415,6 @@ export const clip = new HTMLClip({
   font-size:12px;
   font-weight:bold;
 }
-
   `,
   fonts: [
     {
@@ -420,7 +434,7 @@ export const clip = new HTMLClip({
 const MyIncident1 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
+      opacity:0.5,
      top:"-35%",
      right:"-15%"
     },
@@ -434,10 +448,10 @@ const MyIncident1 = new CSSEffect(
 const MyIncident2 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
+      opacity:0.5,
      width:"90px",
      height:"90px",
-     border:"8px solid white"
+     border:"8px solid #0A0144"
     },
   },
   {
@@ -582,7 +596,7 @@ const MyIncident7 = new CSSEffect(
   }
 );
 //remove first slide
-const MyIncident9 = new CSSEffect(
+const MyIncident9a = new CSSEffect(
   {
     animatedAttrs: {
       fontSize:'900%',
@@ -666,7 +680,7 @@ const MyIncident11b = new CSSEffect(
       left:"400px",
       width:"0%",
       height:"0%",
-      border: "3px solid white"
+      border: "3px solid #0A0144"
     },
   },
   {
@@ -675,7 +689,7 @@ const MyIncident11b = new CSSEffect(
     easing: "linear",
   }
 );
-const MyIncident12 = new CSSEffect(
+const MyIncident12a = new CSSEffect(
   {
     animatedAttrs: {
       top:"70px",
@@ -732,7 +746,7 @@ const MyIncident12d = new CSSEffect(
 const MyIncident13 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
+      opacity:0.5,
       top:"-35%",
       left:"-25%"
     },
@@ -746,10 +760,10 @@ const MyIncident13 = new CSSEffect(
 const MyIncident13b = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
+      opacity:0.5,
       width:"90px",
       height:"90px",
-      border:"8px solid white"
+      border:"8px solid #0A0144"
     },
   },
   {
@@ -871,20 +885,8 @@ const MyIncident17 = new CSSEffect(
   }
 );
 
-//reset image because i can't from css
-const MyIncident18a= new CSSEffect(
-  {
-    animatedAttrs: {
-      transform: { rotate: '90deg' },
-    },
-  },
-  {
-    selector: "#smartwatch-img",
-    duration: 1,
-    easing: "linear",
-  }
-);
-const MyIncident18b= new CSSEffect(
+
+const MyIncident18= new CSSEffect(
   {
     animatedAttrs: {
       opacity:1,
@@ -1015,7 +1017,7 @@ const MyIncident25b = new CSSEffect(
       left:"200px",
       width:"0%",
       height:"0%",
-      border: "3px solid white"
+      border: "3px solid #0A0144"
     },
   },
   {
@@ -1024,7 +1026,7 @@ const MyIncident25b = new CSSEffect(
     easing: "linear",
   }
 );
-const MyIncident26 = new CSSEffect(
+const MyIncident26a = new CSSEffect(
   {
     animatedAttrs: {
       top:"-10px",
@@ -1083,7 +1085,7 @@ const MyIncident27 = new CSSEffect(
     animatedAttrs: {
       left:"75%",
       top:"-30%",
-      opacity:1
+      opacity:0.5
     },
   },
   {
@@ -1095,10 +1097,10 @@ const MyIncident27 = new CSSEffect(
 const MyIncident28 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
+      opacity:0.5,
       width:"90px",
       height:"90px",
-      border:"8px solid white"
+      border:"8px solid #0A0144"
     },
   },
   {
@@ -1322,19 +1324,43 @@ const MyIncident38 = new CSSEffect(
   }
 );
 //remove 3rd slide
-const MyIncident39 = new CSSEffect(
+const MyIncident39a = new CSSEffect(
   {
     animatedAttrs: {
       left:"100%"
     },
   },
   {
-    selector: ".container3,.big-circle,.small-circle",
+    selector: ".container3",
     duration: 700,
     easing: "linear",
   }
 );
 const MyIncident39b = new CSSEffect(
+  {
+    animatedAttrs: {
+      left:"100%"
+    },
+  },
+  {
+    selector: ".small-circle",
+    duration: 550,
+    easing: "linear",
+  }
+);
+const MyIncident39c = new CSSEffect(
+  {
+    animatedAttrs: {
+      left:"100%"
+    },
+  },
+  {
+    selector: ".big-circle",
+    duration: 200,
+    easing: "linear",
+  }
+);
+const MyIncident39d = new CSSEffect(
   {
     animatedAttrs: {
       opacity:0
@@ -1379,7 +1405,7 @@ const MyIncident41b = new CSSEffect(
       left:"450px",
       width:"0%",
       height:"0%",
-      border: "3px solid white"
+      border: "3px solid #0A0144"
     },
   },
   {
@@ -1388,7 +1414,7 @@ const MyIncident41b = new CSSEffect(
     easing: "linear",
   }
 );
-const MyIncident42 = new CSSEffect(
+const MyIncident42a = new CSSEffect(
   {
     animatedAttrs: {
       top:"10px",
@@ -1444,7 +1470,7 @@ const MyIncident42d = new CSSEffect(
 const MyIncident43 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
+      opacity:0.5,
       top:"-35%",
       left:"-25%"
     },
@@ -1458,10 +1484,10 @@ const MyIncident43 = new CSSEffect(
 const MyIncident44 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
+      opacity:0.5,
       width:"90px",
       height:"90px",
-      border:"8px solid white"
+      border:"8px solid #0A0144"
     },
   },
   {
@@ -1479,7 +1505,7 @@ const MyIncident45 = new CSSEffect(
   },
   {
     selector: ".container4 .title1,.container4 .title2",
-    duration: 2000,
+    duration: 1000,
     easing: "linear",
   }
 );
@@ -1667,7 +1693,7 @@ const MyIncident53 = new CSSEffect(
   },
   {
     selector: ".container4 .title, .container4 .info,.container4 .color-tag, .container4 .price-tag .letter, .container4 .f-text",
-    duration: 1000,
+    duration: 600,
     easing: "linear",
   }
 );
@@ -1682,7 +1708,7 @@ const MyIncident54 = new CSSEffect(
   },
   {
     selector: ".container4",
-    duration: 1000,
+    duration: 600,
     easing: "linear",
   }
 );
@@ -1696,7 +1722,7 @@ const MyIncident55 = new CSSEffect(
   },
   {
     selector: ".container4 .price-tag, .container4 .bullet, .container4 .color, .container4 img, .container4 .informations",
-    duration: 1000,
+    duration: 600,
     easing: "linear",
   }
 );
@@ -1708,13 +1734,13 @@ const MyIncident56 = new CSSEffect(
       left:"35%",
       width:"0%",
       height:"0%",
-      border:"1px solid white",
+      border:"1px solid #0A0144",
       opacity:0
     },
   },
   {
     selector: ".small-circle , .big-circle",
-    duration: 1000,
+    duration: 600,
     easing: "linear",
   }
 );
@@ -1731,7 +1757,7 @@ const MyIncident57a = new CSSEffect(
   },
   {
     selector: ".line1",
-    duration: 1000,
+    duration:600,
     easing: "linear",
   }
 );
@@ -1747,7 +1773,7 @@ const MyIncident57b = new CSSEffect(
   },
   {
     selector: ".line2",
-    duration: 1000,
+    duration: 600,
     easing: "linear",
   }
 );
@@ -1763,7 +1789,7 @@ const MyIncident57c = new CSSEffect(
   },
   {
     selector: ".line3",
-    duration: 1000,
+    duration: 600,
     easing: "linear",
   }
 );
@@ -1779,128 +1805,160 @@ const MyIncident57d = new CSSEffect(
   },
   {
     selector: ".line4",
-    duration: 1000,
+    duration: 600,
     easing: "linear",
   }
 );
+//1st slide 
+  //circles
+  clip.addIncident(MyIncident1, 0);
+  clip.addIncident(MyIncident2, 0);
+  //lines
+  clip.addIncident(MyIncident3a, 0);
+  clip.addIncident(MyIncident3b, 0);
+  clip.addIncident(MyIncident3c, 0);
+  clip.addIncident(MyIncident3d, 0);
+  //text
+  clip.addIncident(MyIncident4, 0);
+  clip.addIncident(MyIncident4b,1300);
+  clip.addIncident(MyIncident5, 0);
+  clip.addIncident(MyIncident6, 0);
+  clip.addIncident(MyIncident6b, 0);
+  clip.addIncident(MyIncident7, 100);
 
-clip.addIncident(MyIncident1, 0);
-clip.addIncident(MyIncident2, 0);
-clip.addIncident(MyIncident3a, 0);
-clip.addIncident(MyIncident3b, 0);
-clip.addIncident(MyIncident3c, 0);
-clip.addIncident(MyIncident3d, 0);
-clip.addIncident(MyIncident4, 0);
-clip.addIncident(MyIncident4b,1300);
-clip.addIncident(MyIncident5, 0);
-clip.addIncident(MyIncident6, 0);
-clip.addIncident(MyIncident6b, 0);
-clip.addIncident(MyIncident7, 100);
-clip.addIncident(MyIncident9, 2700);
-clip.addIncident(MyIncident9b, 2700);
-clip.addIncident(MyIncident9c, 2700);
-clip.addIncident(MyIncident9d, 2700);
-clip.addIncident(MyIncident10, 2700);
+//remove 1st slide
+  //text
+  clip.addIncident(MyIncident9a, 2700);
+  clip.addIncident(MyIncident9b, 2700);
+  clip.addIncident(MyIncident9c, 2700);
+  clip.addIncident(MyIncident9d, 2700);
+  //lines and circles
+  clip.addIncident(MyIncident10, 2700);
 
-clip.addIncident(MyIncident11, 2800);
-clip.addIncident(MyIncident11b, 2800);
-clip.addIncident(MyIncident12, 2800);
-clip.addIncident(MyIncident12b, 2800);
-clip.addIncident(MyIncident12c, 2800);
-clip.addIncident(MyIncident12d, 2800);
+//reset positions(prepare for 2nd slide)
+  //circles
+  clip.addIncident(MyIncident11, 2800);
+  clip.addIncident(MyIncident11b, 2800);
+  //lines
+  clip.addIncident(MyIncident12a, 2800);
+  clip.addIncident(MyIncident12b, 2800);
+  clip.addIncident(MyIncident12c, 2800);
+  clip.addIncident(MyIncident12d, 2800);
 
-clip.addIncident(MyIncident13, 3000);
-clip.addIncident(MyIncident13b, 3000);
-clip.addIncident(MyIncident14, 3000);
-clip.addIncident(MyIncident14b, 3000);
-clip.addIncident(MyIncident15a, 3000);
-clip.addIncident(MyIncident15b, 3000);
-clip.addIncident(MyIncident15c, 3000);
-clip.addIncident(MyIncident15d, 3000);
+//2nd slide
+  //circles
+  clip.addIncident(MyIncident13, 3000);
+  clip.addIncident(MyIncident13b, 3000);
+  //info
+  clip.addIncident(MyIncident14, 3000);
+  clip.addIncident(MyIncident14b, 3000);
+  //lines
+  clip.addIncident(MyIncident15a, 3000);
+  clip.addIncident(MyIncident15b, 3000);
+  clip.addIncident(MyIncident15c, 3000);
+  clip.addIncident(MyIncident15d, 3000);
+  //features
+  clip.addIncident(MyIncident16, 3000);
+  clip.addIncident(MyIncident17, 3000);
+  //image
+  clip.addIncident(MyIncident18, 3000);
+  //extra-info
+  clip.addIncident(MyIncident19, 3000);
+  clip.addIncident(MyIncident19b, 3000);
+  clip.addIncident(MyIncident20, 3000);
+  clip.addIncident(MyIncident21, 3000);
 
-clip.addIncident(MyIncident16, 3000);
-clip.addIncident(MyIncident17, 3000);
+//remove 2nd slide
+  //container
+  clip.addIncident(MyIncident22, 5700);
+  //lines and circles
+  clip.addIncident(MyIncident23, 5700);
+  clip.addIncident(MyIncident24, 5700);
 
-clip.addIncident(MyIncident18a, 2999);
-clip.addIncident(MyIncident18b, 3000);
-clip.addIncident(MyIncident19, 3000);
-clip.addIncident(MyIncident19b, 3000);
-clip.addIncident(MyIncident20, 3000);
-clip.addIncident(MyIncident21, 3000);
-clip.addIncident(MyIncident22, 5700);
-clip.addIncident(MyIncident23, 5700);
-clip.addIncident(MyIncident24, 5700);
+//reset positions(prepare for 3rd slide)
+  //circles
+  clip.addIncident(MyIncident25, 6200);
+  clip.addIncident(MyIncident25b, 6200);
+  //lines
+  clip.addIncident(MyIncident26a, 6200);
+  clip.addIncident(MyIncident26b, 6200);
+  clip.addIncident(MyIncident26c, 6200);
+  clip.addIncident(MyIncident26d, 6200);
 
-clip.addIncident(MyIncident25, 6200);
-clip.addIncident(MyIncident25b, 6200);
-clip.addIncident(MyIncident26, 6200);
-clip.addIncident(MyIncident26b, 6200);
-clip.addIncident(MyIncident26c, 6200);
-clip.addIncident(MyIncident26d, 6200);
+//3rd slide
+  //circles
+  clip.addIncident(MyIncident27, 6300);
+  clip.addIncident(MyIncident28, 6300);
+  //info
+  clip.addIncident(MyIncident29, 6300);
+  clip.addIncident(MyIncident29b, 6300);
+  //lines
+  clip.addIncident(MyIncident30a, 6300);
+  clip.addIncident(MyIncident30b, 6300);
+  clip.addIncident(MyIncident30c, 6300);
+  clip.addIncident(MyIncident30d, 6300);
+  //features
+  clip.addIncident(MyIncident31, 6300);
+  clip.addIncident(MyIncident32, 6300);
+  //extra-info
+  clip.addIncident(MyIncident33, 6300);
+  clip.addIncident(MyIncident33b, 6300);
+  clip.addIncident(MyIncident34, 6300);
+  clip.addIncident(MyIncident35, 6300);
+  //images
+  clip.addIncident(MyIncident36, 6300);
+  clip.addIncident(MyIncident37, 8300);
+  clip.addIncident(MyIncident38, 8301);
 
-clip.addIncident(MyIncident27, 6300);
-clip.addIncident(MyIncident28, 6300);
-clip.addIncident(MyIncident29, 6300);
-clip.addIncident(MyIncident29b, 6300);
+//remove 3rd slide
+  clip.addIncident(MyIncident39a, 9200);
+  clip.addIncident(MyIncident39b, 9200);
+  clip.addIncident(MyIncident39c, 9200);
+  clip.addIncident(MyIncident39d, 9200);
 
-clip.addIncident(MyIncident30a, 6300);
-clip.addIncident(MyIncident30b, 6300);
-clip.addIncident(MyIncident30c, 6300);
-clip.addIncident(MyIncident30d, 6300);
+//reset posotions(prepare for 4th slide)
+  clip.addIncident(MyIncident40, 9900);
+  //circles
+  clip.addIncident(MyIncident41, 9900);
+  clip.addIncident(MyIncident41b, 9900);
+  //lines
+  clip.addIncident(MyIncident42a, 9900);
+  clip.addIncident(MyIncident42b, 9900);
+  clip.addIncident(MyIncident42c, 9900);
+  clip.addIncident(MyIncident42d, 9900);
 
-clip.addIncident(MyIncident31, 6300);
-clip.addIncident(MyIncident32, 6300);
+//4th slide
+  //circles
+  clip.addIncident(MyIncident43,10000);
+  clip.addIncident(MyIncident44,10000);
+  //info
+  clip.addIncident(MyIncident45,10000);
+  clip.addIncident(MyIncident45b,10000);
+  //lines
+  clip.addIncident(MyIncident46a,10000);
+  clip.addIncident(MyIncident46b,10000);
+  clip.addIncident(MyIncident46c,10000);
+  clip.addIncident(MyIncident46d,10000);
+  //features
+  clip.addIncident(MyIncident47,10000);
+  clip.addIncident(MyIncident48,10000);
+  //image
+  clip.addIncident(MyIncident49,10000);
+  //extra-info
+  clip.addIncident(MyIncident50,10000);
+  clip.addIncident(MyIncident50b,10000);
+  clip.addIncident(MyIncident51,10000);
+  clip.addIncident(MyIncident52,10000);
 
-
-clip.addIncident(MyIncident33, 6300);
-clip.addIncident(MyIncident33b, 6300);
-clip.addIncident(MyIncident34, 6300);
-clip.addIncident(MyIncident35, 6300);
-clip.addIncident(MyIncident36, 6300);
-clip.addIncident(MyIncident37, 8300);
-clip.addIncident(MyIncident38, 8301);
-
-clip.addIncident(MyIncident39, 9200);
-clip.addIncident(MyIncident39b, 9200);
-
-clip.addIncident(MyIncident40, 9900);
-clip.addIncident(MyIncident41, 9900);
-clip.addIncident(MyIncident41b, 9900);
-clip.addIncident(MyIncident41b, 9900);
-clip.addIncident(MyIncident42, 9900);
-clip.addIncident(MyIncident42b, 9900);
-clip.addIncident(MyIncident42c, 9900);
-clip.addIncident(MyIncident42d, 9900);
-clip.addIncident(MyIncident43,10000);
-clip.addIncident(MyIncident44,10000);
-clip.addIncident(MyIncident45,10000);
-clip.addIncident(MyIncident45b,10000);
-
-clip.addIncident(MyIncident46a,10000);
-clip.addIncident(MyIncident46b,10000);
-clip.addIncident(MyIncident46c,10000);
-clip.addIncident(MyIncident46d,10000);
-
-clip.addIncident(MyIncident47,10000);
-clip.addIncident(MyIncident48,10000);
-
-
-clip.addIncident(MyIncident49,10000);
-
-clip.addIncident(MyIncident50,10000);
-clip.addIncident(MyIncident50b,10000);
-clip.addIncident(MyIncident51,10000);
-clip.addIncident(MyIncident52,10000);
-
-clip.addIncident(MyIncident53, 13000);
-clip.addIncident(MyIncident54, 13000);
-clip.addIncident(MyIncident55, 13000);
-clip.addIncident(MyIncident56, 13000);
-
-clip.addIncident(MyIncident57a, 13000);
-clip.addIncident(MyIncident57b, 13000);
-clip.addIncident(MyIncident57c, 13000);
-clip.addIncident(MyIncident57d, 13000);
-
-
-
+//remove 4th slide
+  //container
+  clip.addIncident(MyIncident53, 13000);
+  clip.addIncident(MyIncident54, 13000);
+  clip.addIncident(MyIncident55, 13000);
+  //circles
+  clip.addIncident(MyIncident56, 13000);
+  //lines
+  clip.addIncident(MyIncident57a, 13000);
+  clip.addIncident(MyIncident57b, 13000);
+  clip.addIncident(MyIncident57c, 13000);
+  clip.addIncident(MyIncident57d, 13000);

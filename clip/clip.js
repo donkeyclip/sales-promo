@@ -254,6 +254,7 @@ export const clip = new HTMLClip({
   width: 100%;
   height: 100%;
 }
+
 .informations{
   width:32%;
   font-family: Lato;
@@ -261,11 +262,13 @@ export const clip = new HTMLClip({
   top:10%;
 }
 .container3 .informations{
+  top:-450px;
   right:40%;
   transform :translateX(60%);
 }
 .container4 .informations{
   height:80%;
+  left:-400px;
 }
 .title{
   font-size: 60px;
@@ -375,23 +378,29 @@ export const clip = new HTMLClip({
   opacity:0;
 }
 .container3 img{
-  width:40%;
+  width:5%;
   position:absolute;
-  top:-130px;
+  top:-300px;
   left:-100px;
   opacity:0;
 }
-.container2 .features, .container4 .features{
+.container2 .features{
   position:absolute;
-  right:30%;
+  left:70%;
   top:50%;
-  transform: translate(70%,-50%);
+  transform: translate(-30%,-50%);
 }
 .container3 .features{
   position:absolute;
   left:20%;
+  top:-450px;
+  transform: translateX(-80%);
+}
+.container4 .features{
+  position:absolute;
+  left:-30%;
   top:50%;
-  transform: translate(-80%,-50%);
+  transform: translate(-30%,-50%);
 }
 .feature{
   display: flex;
@@ -410,7 +419,7 @@ export const clip = new HTMLClip({
 }
 .f-text{
   opacity:0;
-  margin-left: 45px;
+  margin-left: 50px;
   font-family: Lato;
   font-size:12px;
   font-weight:bold;
@@ -442,8 +451,7 @@ const MyIncident1 = new CSSEffect(
   },
   {
     selector: ".big-circle",
-    duration: 2220,
-    easing: "linear",
+    duration: 2220
   }
 );
 const MyIncident2 = new CSSEffect(
@@ -457,8 +465,7 @@ const MyIncident2 = new CSSEffect(
   },
   {
     selector: ".small-circle",
-    duration: 2220,
-    easing: "linear",
+    duration: 2220
   }
 );
 const MyIncident3a = new CSSEffect(
@@ -471,8 +478,7 @@ const MyIncident3a = new CSSEffect(
   },
   {
     selector: ".line1",
-    duration: 2220,
-    easing: "linear",
+    duration: 2220
   }
 );
 const MyIncident3b = new CSSEffect(
@@ -486,7 +492,6 @@ const MyIncident3b = new CSSEffect(
   {
     selector: ".line2",
     duration: 2220,
-    easing: "linear",
   }
 );
 const MyIncident3c = new CSSEffect(
@@ -499,8 +504,7 @@ const MyIncident3c = new CSSEffect(
   },
   {
     selector: ".line3",
-    duration: 2220,
-    easing: "linear",
+    duration: 2220
   }
 );
 const MyIncident3d = new CSSEffect(
@@ -513,8 +517,7 @@ const MyIncident3d = new CSSEffect(
   },
   {
     selector: ".line4",
-    duration: 2220,
-    easing: "linear",
+    duration: 2220
   }
 );
 const MyIncident4 = new CSSEffect(
@@ -527,7 +530,7 @@ const MyIncident4 = new CSSEffect(
   {
     selector: ".text1",
     duration:2220,
-    easing: "linear",
+    easing:"easeOutQuad"
   }
 );
 const MyIncident4b = new CSSEffect(
@@ -538,8 +541,7 @@ const MyIncident4b = new CSSEffect(
   },
   {
     selector: ".text1",
-    duration:1000,
-    easing: "easeOutExpo",
+    duration:2000,
   }
 );
 
@@ -860,8 +862,8 @@ const MyIncident14b = new CSSEffect(
   },
   {
     selector: ".container2 .title>.letter",
-    delay:"@stagger(0, 2000)",
-    duration: 1500,
+    delay:"@stagger(0, 2700)",
+    duration: 1000,
     easing:"easeOutQuad"
   }
 );
@@ -930,8 +932,8 @@ const MyIncident16 = new CSSEffect(
   },
   {
     selector: ".container2 .bullet",
-    delay:"@stagger(0, 800)",
-    duration: 1300,
+    delay:"@stagger(0, 1500)",
+    duration: 600,
     easing:"easeOutQuad"
   }
 );
@@ -946,7 +948,7 @@ const MyIncident17 = new CSSEffect(
   },
   {
     selector: ".container2 .f-text",
-    delay:"@stagger(0, 800)",
+    delay:"@stagger(0, 1500)",
     duration: 1300,
     easing:"easeOutQuad"
   }
@@ -1233,7 +1235,19 @@ const MyIncident28 = new CSSEffect(
     easing:"easeOutQuad"
   }
 );
-const MyIncident29 = new CSSEffect(
+const MyIncident29a = new CSSEffect(
+  {
+    animatedAttrs: {
+      top:"50px"
+    },
+  },
+  {
+    selector: ".container3 .informations",
+    duration: 300,
+    easing:"easeOutQuad"
+  }
+);
+const MyIncident29b = new CSSEffect(
   {
     animatedAttrs: {
       opacity:1,
@@ -1245,7 +1259,7 @@ const MyIncident29 = new CSSEffect(
     easing:"easeOutQuad"
   }
 );
-const MyIncident29b = new CSSEffect(
+const MyIncident29c = new CSSEffect(
   {
     animatedAttrs: {
       opacity:1,
@@ -1253,8 +1267,8 @@ const MyIncident29b = new CSSEffect(
   },
   {
     selector: ".container3 .title>.letter",
-    delay:"@stagger(0, 2000)",
-    duration: 1500,
+    delay:"@stagger(0, 2700)",
+    duration: 1000,
     easing:"easeOutQuad"
   }
 );
@@ -1315,8 +1329,22 @@ const MyIncident30d = new CSSEffect(
     easing:"easeOutQuad"
   }
 );
-//bullets for 3rd slide
+//features for 3rd slide
 const MyIncident31 = new CSSEffect(
+  {
+    animatedAttrs: {
+      top:"50%",
+      transform:{translateY:"-50%"}
+    },
+  },
+  {
+    selector: ".container3 .features",
+    duration: 300,
+    easing:"easeOutQuad"
+  }
+);
+//bullets for 3rd slide
+const MyIncident32a = new CSSEffect(
   {
     animatedAttrs: {
     width:"5px",
@@ -1326,14 +1354,14 @@ const MyIncident31 = new CSSEffect(
   },
   {
     selector: ".container3 .bullet",
-    delay:"@stagger(0, 800)",
-    duration: 1300,
+    delay:"@stagger(0, 1500)",
+    duration: 600,
     easing:"easeOutQuad"
   }
 );
 
 //f-text for 3rd slide
-const MyIncident32 = new CSSEffect(
+const MyIncident32b = new CSSEffect(
   {
     animatedAttrs: {
       opacity:1,
@@ -1342,7 +1370,7 @@ const MyIncident32 = new CSSEffect(
   },
   {
     selector: ".container3 .f-text",
-    delay:"@stagger(0, 800)",
+    delay:"@stagger(0, 1500)",
     duration: 1300,
     easing:"easeOutQuad"
   }
@@ -1411,12 +1439,13 @@ const MyIncident36 = new CSSEffect(
   {
     animatedAttrs: {
       width:"80%",
+      top:"-150px",
       opacity:1
     },
   },
   {
     selector: ".container3 #front",
-    duration: 2000,
+    duration: 600,
     easing:"easeOutQuad"
   }
 );
@@ -1424,6 +1453,7 @@ const MyIncident37 = new CSSEffect(
   {
     animatedAttrs: {
       width:"70%",
+      top:"-150px",
       opacity:1,
     },
   },
@@ -1652,7 +1682,19 @@ const MyIncident44 = new CSSEffect(
     easing:"easeOutQuad"
   }
 );
-const MyIncident45 = new CSSEffect(
+const MyIncident45a = new CSSEffect(
+  {
+    animatedAttrs: {
+      left:"50px"
+    },
+  },
+  {
+    selector: ".container4 .informations",
+    duration: 300,
+    easing:"easeOutQuad"
+  }
+);
+const MyIncident45b = new CSSEffect(
   {
     animatedAttrs: {
       opacity:1,
@@ -1665,7 +1707,7 @@ const MyIncident45 = new CSSEffect(
     easing:"easeOutQuad"
   }
 );
-const MyIncident45b = new CSSEffect(
+const MyIncident45c = new CSSEffect(
   {
     animatedAttrs: {
       opacity:1
@@ -1734,8 +1776,20 @@ const MyIncident46d = new CSSEffect(
     easing:"easeOutQuad"
   }
 );
-//bullets for 4th slide
 const MyIncident47 = new CSSEffect(
+  {
+    animatedAttrs: {
+     left:"70%"
+    },
+  },
+  {
+    selector: ".container4 .features",
+    duration: 300,
+    easing:"easeOutQuad"
+  }
+);
+//bullets for 4th slide
+const MyIncident48a = new CSSEffect(
   {
     animatedAttrs: {
     width:"5px",
@@ -1745,14 +1799,14 @@ const MyIncident47 = new CSSEffect(
   },
   {
     selector: ".container4 .bullet",
-    delay:"@stagger(0, 800)",
-    duration: 1300,
+    delay:"@stagger(0, 1500)",
+    duration: 600,
     easing:"easeOutQuad"
   }
 );
 
 //f-text for 4th slide
-const MyIncident48 = new CSSEffect(
+const MyIncident48b = new CSSEffect(
   {
     animatedAttrs: {
       opacity:1,
@@ -1761,7 +1815,7 @@ const MyIncident48 = new CSSEffect(
   },
   {
     selector: ".container4 .f-text",
-    delay:"@stagger(0, 800)",
+    delay:"@stagger(0, 1500)",
     duration: 1300,
     easing:"easeOutQuad"
   }
@@ -1864,7 +1918,7 @@ const MyIncident54 = new CSSEffect(
   },
   {
     selector: ".container4",
-    duration: 600,
+    duration: 650,
     easing: [1,0,1,0.21],
   }
 );
@@ -1878,7 +1932,7 @@ const MyIncident55 = new CSSEffect(
   },
   {
     selector: ".container4 .price-tag, .container4 .bullet, .container4 .color, .container4 img, .container4 .informations",
-    duration: 600,
+    duration: 650,
     easing: [1,0,1,0.21]
   }
 );
@@ -1896,7 +1950,7 @@ const MyIncident56 = new CSSEffect(
   },
   {
     selector: ".small-circle , .big-circle",
-    duration: 600,
+    duration: 650,
     easing: [1,0,1,0.21]
   }
 );
@@ -1913,7 +1967,7 @@ const MyIncident57a = new CSSEffect(
   },
   {
     selector: ".line1",
-    duration:600,
+    duration:650,
     easing: [1,0,1,0.21]
   }
 );
@@ -1929,7 +1983,7 @@ const MyIncident57b = new CSSEffect(
   },
   {
     selector: ".line2",
-    duration: 600,
+    duration: 650,
     easing: [1,0,1,0.21]
   }
 );
@@ -1945,7 +1999,7 @@ const MyIncident57c = new CSSEffect(
   },
   {
     selector: ".line3",
-    duration: 600,
+    duration: 650,
     easing: [1,0,1,0.21]
   }
 );
@@ -1961,7 +2015,7 @@ const MyIncident57d = new CSSEffect(
   },
   {
     selector: ".line4",
-    duration: 600,
+    duration: 650,
     easing: [1,0,1,0.21]
   }
 );
@@ -2057,8 +2111,9 @@ const MyIncident57d = new CSSEffect(
   clip.addIncident(MyIncident27, 9202);
   clip.addIncident(MyIncident28, 9202);
   //info
-  clip.addIncident(MyIncident29, 9202);
-  clip.addIncident(MyIncident29b, 9202);
+  clip.addIncident(MyIncident29a, 9202);
+  clip.addIncident(MyIncident29b, 9402);
+  clip.addIncident(MyIncident29c, 9402);
   //lines
   clip.addIncident(MyIncident30a, 9202);
   clip.addIncident(MyIncident30b, 9202);
@@ -2066,7 +2121,8 @@ const MyIncident57d = new CSSEffect(
   clip.addIncident(MyIncident30d, 9202);
   //features
   clip.addIncident(MyIncident31, 9202);
-  clip.addIncident(MyIncident32, 9202);
+  clip.addIncident(MyIncident32a, 9402);
+  clip.addIncident(MyIncident32b, 9402);
   //extra-info
   clip.addIncident(MyIncident33, 9202);
   clip.addIncident(MyIncident33b, 9202);
@@ -2074,8 +2130,8 @@ const MyIncident57d = new CSSEffect(
   clip.addIncident(MyIncident35, 9202);
   //images
   clip.addIncident(MyIncident36, 9202);
-  clip.addIncident(MyIncident37, 11202);
-  clip.addIncident(MyIncident38, 11203);
+  clip.addIncident(MyIncident37, 11002);
+  clip.addIncident(MyIncident38, 11003);
 
 //remove 3rd slide
   clip.addIncident(MyIncident39a, 13041);
@@ -2104,8 +2160,9 @@ const MyIncident57d = new CSSEffect(
   clip.addIncident(MyIncident43,13942);
   clip.addIncident(MyIncident44,13942);
   //info
-  clip.addIncident(MyIncident45,13942);
-  clip.addIncident(MyIncident45b,13942);
+  clip.addIncident(MyIncident45a,13942);
+  clip.addIncident(MyIncident45b,14142);
+  clip.addIncident(MyIncident45c,14142);
   //lines
   clip.addIncident(MyIncident46a,13942);
   clip.addIncident(MyIncident46b,13942);
@@ -2113,7 +2170,8 @@ const MyIncident57d = new CSSEffect(
   clip.addIncident(MyIncident46d,13942);
   //features
   clip.addIncident(MyIncident47,13942);
-  clip.addIncident(MyIncident48,13942);
+  clip.addIncident(MyIncident48a,14142);
+  clip.addIncident(MyIncident48b,14142);
   //image
   clip.addIncident(MyIncident49,13942);
   //extra-info
@@ -2124,13 +2182,13 @@ const MyIncident57d = new CSSEffect(
 
 //remove 4th slide
   //container
-  clip.addIncident(MyIncident53, 17781);
-  clip.addIncident(MyIncident54, 17781);
-  clip.addIncident(MyIncident55, 17781);
+  clip.addIncident(MyIncident53, 18000);
+  clip.addIncident(MyIncident54, 18000);
+  clip.addIncident(MyIncident55, 18000);
   //circles
-  clip.addIncident(MyIncident56, 17781);
+  clip.addIncident(MyIncident56, 18000);
   //lines
-  clip.addIncident(MyIncident57a, 17781);
-  clip.addIncident(MyIncident57b, 17781);
-  clip.addIncident(MyIncident57c, 17781);
-  clip.addIncident(MyIncident57d, 17781);
+  clip.addIncident(MyIncident57a, 18000);
+  clip.addIncident(MyIncident57b, 18000);
+  clip.addIncident(MyIncident57c, 18000);
+  clip.addIncident(MyIncident57d, 18000);

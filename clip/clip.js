@@ -1,7 +1,5 @@
 import {HTMLClip,CSSEffect} from "@donkeyclip/motorcortex";
 
-import "../node_modules/font-awesome/css/font-awesome.css";
-
 function saparateLetters(word){
   let letterDivs="";
   for(let i=0;i<word.length;i++){
@@ -134,7 +132,7 @@ export const clip = new HTMLClip({
             </div>
         </div>
     </div>
-    <a href="https://motorcortexjs.com/"><span>BUY NOW</span> <img src="images/shopping_bag_icon.png"></a>
+    <a href="https://motorcortexjs.com/"><span>BUY NOW</span> <img src="https://github.com/ElisavetAmpatzidou/clip/blob/main/demo/images/shopping_bag_icon.png?raw=true"></a>
 </div>
 `,
   css: `

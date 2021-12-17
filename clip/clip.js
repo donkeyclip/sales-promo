@@ -1,5 +1,7 @@
 import {HTMLClip,CSSEffect} from "@donkeyclip/motorcortex";
 
+import "../node_modules/font-awesome/css/font-awesome.css";
+
 function saparateLetters(word){
   let letterDivs="";
   for(let i=0;i<word.length;i++){
@@ -132,6 +134,7 @@ export const clip = new HTMLClip({
             </div>
         </div>
     </div>
+    <a href="https://motorcortexjs.com/"><span>BUY NOW</span> <img src="images/shopping_bag_icon.png"></a>
 </div>
 `,
   css: `
@@ -424,6 +427,41 @@ export const clip = new HTMLClip({
   font-size:12px;
   font-weight:bold;
   color:white;
+}
+a{
+  display:inline-block;
+  width:200px;
+  height:50px;
+  position:absolute;
+  top:45%;
+  left:50%;
+  transform: translate(-50%,-55%);
+  color: white;
+  background-color: #9975e0;
+  border-radius:200px;
+  text-decoration:none;
+  font-size: 25px;
+  font-weight:bold;
+  font-family: Ubuntu;
+  box-shadow:0 0 25px #ff1cac;
+  visibility: hidden;
+  opacity:0;
+}
+a span{
+  position:absolute;
+  white-space: nowrap;
+  top:50%;
+  left:45%;
+  transform: translate(-55%,-50%);
+}
+a img{
+  position:absolute;
+  top:50%;
+  left:80%;
+  transform: translate(-20%,-50%);
+}
+a:hover{
+  box-shadow:0 0 50px #ff1cac;
 }
   `,
   fonts: [
@@ -2019,6 +2057,19 @@ const MyIncident57d = new CSSEffect(
     easing: [1,0,1,0.21]
   }
 );
+const MyIncident58 = new CSSEffect(
+  {
+    animatedAttrs: {
+      visibility: "visible",
+      opacity:1
+    },
+  },
+  {
+    selector: "a",
+    duration: 2000,
+    easing: "linear"
+  }
+);
 //1st slide 
   //circles
   clip.addIncident(MyIncident1, 0);
@@ -2192,3 +2243,5 @@ const MyIncident57d = new CSSEffect(
   clip.addIncident(MyIncident57b, 18000);
   clip.addIncident(MyIncident57c, 18000);
   clip.addIncident(MyIncident57d, 18000);
+  clip.addIncident(MyIncident58, 18650);
+ 

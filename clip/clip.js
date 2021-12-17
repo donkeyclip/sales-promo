@@ -441,8 +441,8 @@ a{
   font-size: 25px;
   font-weight:bold;
   font-family: Ubuntu;
-  box-shadow:0 0 25px #ff1cac;
   visibility: hidden;
+  box-shadow:0 0 5px #ff1cac;
   opacity:0;
 }
 a span{
@@ -459,7 +459,7 @@ a img{
   transform: translate(-20%,-50%);
 }
 a:hover{
-  box-shadow:0 0 50px #ff1cac;
+  box-shadow:0 0 25px #ff1cac;
 }
   `,
   fonts: [
@@ -487,7 +487,8 @@ const MyIncident1 = new CSSEffect(
   },
   {
     selector: ".big-circle",
-    duration: 2220
+    duration: 2220,
+    easing:"easeOutQuad"
   }
 );
 const MyIncident2 = new CSSEffect(
@@ -501,7 +502,8 @@ const MyIncident2 = new CSSEffect(
   },
   {
     selector: ".small-circle",
-    duration: 2220
+    duration: 2220,
+    easing:"easeOutQuad"
   }
 );
 const MyIncident3a = new CSSEffect(
@@ -514,7 +516,8 @@ const MyIncident3a = new CSSEffect(
   },
   {
     selector: ".line1",
-    duration: 2220
+    duration: 2220,
+    easing:"easeOutQuad"
   }
 );
 const MyIncident3b = new CSSEffect(
@@ -528,6 +531,7 @@ const MyIncident3b = new CSSEffect(
   {
     selector: ".line2",
     duration: 2220,
+    easing:"easeOutQuad"
   }
 );
 const MyIncident3c = new CSSEffect(
@@ -540,7 +544,8 @@ const MyIncident3c = new CSSEffect(
   },
   {
     selector: ".line3",
-    duration: 2220
+    duration: 2220,
+    easing:"easeOutQuad"
   }
 );
 const MyIncident3d = new CSSEffect(
@@ -553,7 +558,8 @@ const MyIncident3d = new CSSEffect(
   },
   {
     selector: ".line4",
-    duration: 2220
+    duration: 2220,
+    easing:"easeOutQuad"
   }
 );
 const MyIncident4 = new CSSEffect(
@@ -644,7 +650,8 @@ const MyIncident9a = new CSSEffect(
   },
   {
     selector: ".text1,.text2,.text3",
-    duration:2140,
+    duration:1500,
+    delay:550,
     easing: [1,0,1,0],
   }
 );
@@ -656,7 +663,8 @@ const MyIncident9b = new CSSEffect(
   },
   {
     selector: ".text1",
-    duration:2140,
+    duration:1500,
+    delay:550,
     easing: [1,0,1,0],
   }
 );
@@ -668,7 +676,8 @@ const MyIncident9c = new CSSEffect(
   },
   {
     selector: ".text3",
-    duration:2140,
+    duration:1500,
+    delay:550,
     easing: [1,0,1,0],
   }
 );
@@ -682,7 +691,8 @@ const MyIncident9d = new CSSEffect(
   },
   {
     selector: ".text3,.text3>p",
-    duration:2140,
+    duration:1500,
+    delay:550,
     easing: [1,0,1,0],
   }
 );
@@ -696,7 +706,7 @@ const MyIncident10a = new CSSEffect(
   },
   {
     selector: ".big-circle",
-    duration: 2140,
+    duration: 2000,
     easing: [1,0,1,0],
   }
 );
@@ -710,7 +720,7 @@ const MyIncident10b = new CSSEffect(
   },
   {
     selector: ".small-circle",
-    duration: 2140,
+    duration: 2000,
     easing: [1,0,1,0],
   }
 );
@@ -724,7 +734,7 @@ const MyIncident10c = new CSSEffect(
   },
   {
     selector: ".line1",
-    duration: 2140,
+    duration: 2000,
     easing: [1,0,1,0],
   }
 );
@@ -738,7 +748,7 @@ const MyIncident10d = new CSSEffect(
   },
   {
     selector: ".line2",
-    duration: 2140,
+    duration: 2000,
     easing: [1,0,1,0],
   }
 );
@@ -752,7 +762,7 @@ const MyIncident10e = new CSSEffect(
   },
   {
     selector: ".line3",
-    duration: 2140,
+    duration: 2000,
     easing: [1,0,1,0],
   }
 );
@@ -766,7 +776,7 @@ const MyIncident10f = new CSSEffect(
   },
   {
     selector: ".line4",
-    duration: 2140,
+    duration: 2000,
     easing: [1,0,1,0],
   }
 );

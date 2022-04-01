@@ -179,8 +179,6 @@ export const clip = new HTMLClip({
     top:55%;
     left:50%;
     transform :translateX(-50%);
-    font-size: 25px;
-    font-family: Ubuntu;
     color:{{initParams.baseColor}};
     background-color: {{initParams.secondaryColor}};
     width:30px;
@@ -188,15 +186,15 @@ export const clip = new HTMLClip({
     border-radius:8px;
     opacity:0;
   }
-  p{
+  .text3>p{
     position:absolute;
     font-size: 0px;
     font-family: Ubuntu;
-    padding:0;
-    margin:0;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
+    padding:0;
+    margin:0;
   }
   .circle{
     display: block;
@@ -688,11 +686,24 @@ const MyIncident9d = new CSSEffect(
     animatedAttrs: {
      width:"200px",
      height:"50px",
+    },
+  },
+  {
+    selector: ".text3",
+    duration:1500,
+    delay:550,
+    easing: [1,0,1,0],
+  }
+);
+
+const MyIncident9e = new CSSEffect(
+  {
+    animatedAttrs: {
      fontSize:"30px"
     },
   },
   {
-    selector: ".text3,.text3>p",
+    selector: ".text3>p",
     duration:1500,
     delay:550,
     easing: [1,0,1,0],
@@ -1928,19 +1939,7 @@ const MyIncident51= new CSSEffect(
     easing:"easeOutQuad"
   }
 );
-const MyIncident52 = new CSSEffect(
-  {
-    animatedAttrs: {
-      opacity:1
-    },
-  },
-  {
-    selector: ".container4 .price-tag .letter",
-    duration: 500,
-    delay:"@stagger(500, 1000)",
-    easing:"easeOutQuad"
-  }
-);
+
 //remove 4th slide
 const MyIncident53 = new CSSEffect(
   {
@@ -2103,6 +2102,7 @@ const MyIncident58 = new CSSEffect(
   clip.addIncident(MyIncident9b, 2320);
   clip.addIncident(MyIncident9c, 2320);
   clip.addIncident(MyIncident9d, 2320);
+  clip.addIncident(MyIncident9e, 2320);
   //lines and circles
   clip.addIncident(MyIncident10a, 2320);
   clip.addIncident(MyIncident10b, 2320);
@@ -2239,7 +2239,6 @@ const MyIncident58 = new CSSEffect(
   clip.addIncident(MyIncident50,13942);
   clip.addIncident(MyIncident50b,13942);
   clip.addIncident(MyIncident51,13942);
-  clip.addIncident(MyIncident52,13942);
 
 //remove 4th slide
   //container

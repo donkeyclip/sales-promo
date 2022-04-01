@@ -1,4 +1,5 @@
 import {HTMLClip,CSSEffect} from "@donkeyclip/motorcortex";
+import { initParams } from "./initParams";
 
 function saparateLetters(word){
   let letterDivs="";
@@ -37,7 +38,7 @@ export const clip = new HTMLClip({
             </div>
             <div class="price-tag"><p>${saparateLetters("235$")}</p></div>
         </div>
-        <div class="image"><img id="smartwatch-img" src="https://github.com/ElisavetAmpatzidou/clip/blob/main/demo/images/smartwatch.png?raw=true" alt="smartwatch-image"></div>
+        <div class="image"><img id="smartwatch-img" src="{{initParams.smartwatchImg}}" alt="smartwatch-image"></div>
         <div class="features">
             <div class="feature">
                 <div class="bullet b1"></div>
@@ -77,8 +78,8 @@ export const clip = new HTMLClip({
             </div>
         </div>
         <div class="image">
-            <img id="back" src="https://github.com/ElisavetAmpatzidou/clip/blob/main/demo/images/mobile-back.png?raw=true" alt="smartphone-image">
-            <img id="front" src="https://github.com/ElisavetAmpatzidou/clip/blob/main/demo/images/mobile-front.png?raw=true" alt="smartphone-image">
+            <img id="back" src="{{initParams.smartphoneBack}}" alt="smartphone-image">
+            <img id="front" src="{{initParams.smartphoneFront}}" alt="smartphone-image">
         </div>
         <div class="informations">
             <div class="title"> ${saparateLetters("Smart")}<br>${saparateLetters("Phone")} </div>
@@ -112,7 +113,7 @@ export const clip = new HTMLClip({
             </div>
             <div class="price-tag"><p>${saparateLetters("235$")}</p></div>
         </div>
-        <div class="image"><img id="band-img" src="https://github.com/ElisavetAmpatzidou/clip/blob/main/demo/images/band.png?raw=true" alt="smartwatch-image"></div>
+        <div class="image"><img id="band-img" src="{{initParams.bandImg}}" alt="smartwatch-image"></div>
         <div class="features">
             <div class="feature">
                 <div class="bullet b1"></div>
@@ -132,12 +133,12 @@ export const clip = new HTMLClip({
             </div>
         </div>
     </div>
-    <a href="https://motorcortexjs.com/"><span>BUY NOW</span> <img src="https://github.com/ElisavetAmpatzidou/clip/blob/main/demo/images/shopping_bag_icon.png?raw=true"></a>
+    <a href="https://motorcortexjs.com/"><span>BUY NOW</span> <img src="{{initParams.shoppingBagIcon}}"></a>
 </div>
 `,
   css: `
   .container {
-    background-color: #284AC7;
+    background-color: {{initParams.backgroundColor}};
     width: 800px;
     height: 450px;
     position: relative;
@@ -155,7 +156,7 @@ export const clip = new HTMLClip({
     overflow: hidden;
     width:0%;
     opacity:0;
-    color:white;
+    color:{{initParams.baseColor}};
   }
   .text2{
     position:absolute;
@@ -167,7 +168,7 @@ export const clip = new HTMLClip({
     font-weight:bold;
     align-self:flex-start;
     white-space:nowrap;
-    color:white;
+    color:{{initParams.baseColor}};
   }
   .letter{
    display:inline-block;
@@ -180,8 +181,8 @@ export const clip = new HTMLClip({
     transform :translateX(-50%);
     font-size: 25px;
     font-family: Ubuntu;
-    color: white;
-    background-color: #9975e0;
+    color:{{initParams.baseColor}};
+    background-color: {{initParams.secondaryColor}};
     width:30px;
     height:30px;
     border-radius:8px;
@@ -274,7 +275,7 @@ export const clip = new HTMLClip({
 .title{
   font-size: 60px;
   font-weight:bold;
-  color:white;
+  color:{{initParams.baseColor}};
 }
 .container4 .title1{
   opacity:0;
@@ -290,7 +291,7 @@ export const clip = new HTMLClip({
   opacity:0;
   font-size: 15px;
   margin-top:10px;
-  color:white;
+  color:{{initParams.baseColor}};
   height:35%;
   
 }
@@ -308,7 +309,7 @@ export const clip = new HTMLClip({
   height:20px;
   font-size:15px;
   font-weight:bold;
-  color:white;
+  color:{{initParams.baseColor}};
 }
 .container3 .color-tag{
   left:60%;
@@ -342,12 +343,12 @@ export const clip = new HTMLClip({
   flex-direction:row;
   justify-content:center;
   align-items:center;
-    margin-top:10px;
-    color: white;
-    background-color: #9975e0;
-    width:0px;
-    height:0px;
-    opacity: 0;
+  margin-top:10px;
+  color:{{initParams.baseColor}};
+  background-color: {{initParams.secondaryColor}};
+  width:0px;
+  height:0px;
+  opacity: 0;
 }
 .container2 .price-tag{
   position:absolute;
@@ -410,12 +411,12 @@ export const clip = new HTMLClip({
   white-space:nowrap;
   gap: 10px;
   margin-bottom:5px;
-  color:#9975e0;
+  color:{{initParams.secondaryColor}};
 }
 .bullet{
   width:0%;
   height:0%;
-  background-color: #9975e0;
+  background-color: {{initParams.secondaryColor}};
   opacity:0.5;
 }
 .f-text{
@@ -424,7 +425,7 @@ export const clip = new HTMLClip({
   font-family: Lato;
   font-size:12px;
   font-weight:bold;
-  color:white;
+  color:{{initParams.baseColor}};
 }
 a{
   display:inline-block;
@@ -434,8 +435,8 @@ a{
   top:45%;
   left:50%;
   transform: translate(-50%,-55%);
-  color: white;
-  background-color: #9975e0;
+  color:{{initParams.baseColor}};
+  background-color: {{initParams.secondaryColor}};
   border-radius:200px;
   text-decoration:none;
   font-size: 25px;
@@ -470,6 +471,7 @@ a:hover{
     }
   ],
   host: document.getElementById("clip"),
+  initParams: initParams[0].value,
   containerParams: {
     width: "800px",
     height: "450px",

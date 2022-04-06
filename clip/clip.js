@@ -38,7 +38,7 @@ export const clip = new HTMLClip({
             </div>
             <div class="price-tag"><p>${saparateLetters("235$")}</p></div>
         </div>
-        <div class="image"><img id="smartwatch-img" src="{{initParams.smartwatchImg}}" alt="smartwatch-image"></div>
+        <div class="image"><div class="img"></div></div>
         <div class="features">
             <div class="feature">
                 <div class="bullet b1"></div>
@@ -78,8 +78,8 @@ export const clip = new HTMLClip({
             </div>
         </div>
         <div class="image">
-            <img id="back" src="{{initParams.smartphoneBack}}" alt="smartphone-image">
-            <img id="front" src="{{initParams.smartphoneFront}}" alt="smartphone-image">
+            <div class="img" id="back"></div>
+            <div class="img" id="front"></div>
         </div>
         <div class="informations">
             <div class="title"> ${saparateLetters("Smart")}<br>${saparateLetters("Phone")} </div>
@@ -113,7 +113,7 @@ export const clip = new HTMLClip({
             </div>
             <div class="price-tag"><p>${saparateLetters("235$")}</p></div>
         </div>
-        <div class="image"><img id="band-img" src="{{initParams.bandImg}}" alt="smartwatch-image"></div>
+        <div class="image"><div class="img"></div></div>
         <div class="features">
             <div class="feature">
                 <div class="bullet b1"></div>
@@ -133,7 +133,7 @@ export const clip = new HTMLClip({
             </div>
         </div>
     </div>
-    <a href="https://motorcortexjs.com/"><span>BUY NOW</span> <img src="{{initParams.shoppingBagIcon}}"></a>
+    <a href="https://motorcortexjs.com/"><span>BUY NOW</span> <div class="img"></div></a>
 </div>
 `,
   css: `
@@ -370,19 +370,47 @@ export const clip = new HTMLClip({
   top:50%;
   transform: translate(-50%, -50%);
 }
-#smartwatch-img{
+
+.container2 .img, .container4 .img{
+  width:0px;
+  height:0px;
+  opacity:0;
+}
+.container2 .img{
+  background:url({{initParams.smartwatchImg}});
+  background-position:center;
+  background-size:contain;
+  background-repeat:no-repeat;
   transform: rotate(90deg);
 }
-.container2 img, .container4 img{
-  width:0%;
-  opacity:0;
+.container4 .img{
+  background:url({{initParams.bandImg}});
+  background-position:center;
+  background-size:contain;
+  background-repeat:no-repeat;
 }
-.container3 img{
-  width:5%;
+
+.container3 .img{
+  width:30px;
+  height:20px;
   position:absolute;
   top:-300px;
-  left:-100px;
+  left:-120px;
   opacity:0;
+}
+
+#back{
+  background:url({{initParams.smartphoneBack}});
+  background-position:center;
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+
+#front{
+  background:url({{initParams.smartphoneFront}});
+  background-position:center;
+  background-size:contain;
+  background-repeat:no-repeat;
 }
 .container2 .features{
   position:absolute;
@@ -451,11 +479,17 @@ a span{
   left:45%;
   transform: translate(-55%,-50%);
 }
-a img{
+a .img{
+  background:url({{initParams.shoppingBagIcon}});
+  background-position:center;
+  background-size:contain;
+  background-repeat:no-repeat;
+  width:45px;
+  height:45px;
   position:absolute;
   top:50%;
-  left:80%;
-  transform: translate(-20%,-50%);
+  left:78%;
+  transform: translate(-22%,-50%);
 }
 a:hover{
   box-shadow:0 0 25px #ff1cac;
@@ -1017,24 +1051,14 @@ const MyIncident18= new CSSEffect(
   {
     animatedAttrs: {
       opacity:1,
-      width:"100%"
-    },
-  },
-  {
-    selector: "#smartwatch-img",
-    duration: 3300,
-      easing:"easeOutQuad"
-  }
-);
-const MyIncident18b= new CSSEffect(
-  {
-    animatedAttrs: {
+      width:"200px",
+      height:"200px",
       transform: { rotate: '15deg' },
     },
   },
   {
-    selector: "#smartwatch-img",
-    duration: 2000,
+    selector: ".container2 .img",
+    duration: 3300,
       easing:"easeOutQuad"
   }
 );
@@ -1497,7 +1521,8 @@ const MyIncident35 = new CSSEffect(
 const MyIncident36 = new CSSEffect(
   {
     animatedAttrs: {
-      width:"80%",
+      width:"200px",
+      height:"250px",
       top:"-150px",
       opacity:1
     },
@@ -1511,7 +1536,8 @@ const MyIncident36 = new CSSEffect(
 const MyIncident37 = new CSSEffect(
   {
     animatedAttrs: {
-      width:"70%",
+      width:"200px", 
+      height:"250px",
       top:"-150px",
       opacity:1,
     },
@@ -1525,7 +1551,7 @@ const MyIncident38 = new CSSEffect(
   {
     animatedAttrs: {
       top:"-150px",
-      left:"-120px",
+      left:"-140px",
       transform: { rotate: '-10deg' },
     },
   },
@@ -1884,12 +1910,13 @@ const MyIncident49 = new CSSEffect(
   {
     animatedAttrs: {
       opacity:1,
-      width:"130%",
+      width:"200px",
+      height:"200px",
       transform: { rotate: '15deg' }
     },
   },
   {
-    selector: ".container4 img",
+    selector: ".container4 .img",
     duration: 3300,
     easing:"easeOutQuad"
   }
@@ -1954,6 +1981,7 @@ const MyIncident53 = new CSSEffect(
     easing: [1,0,1,0.21],
   }
 );
+
 const MyIncident54 = new CSSEffect(
   {
     animatedAttrs: {
@@ -1972,14 +2000,14 @@ const MyIncident54 = new CSSEffect(
 const MyIncident55 = new CSSEffect(
   {
     animatedAttrs: {
-      width:"0%",
-      height:"0%",
+      width:"0px",
+      height:"0px",
       opacity:0
     },
   },
   {
-    selector: ".container4 .price-tag, .container4 .bullet, .container4 .color, .container4 img, .container4 .informations",
-    duration: 650,
+    selector: ".container4 .price-tag, .container4 .bullet, .container4 .color, .container4 .img, .container4 .informations",
+    duration: 600,
     easing: [1,0,1,0.21]
   }
 );
@@ -2138,7 +2166,6 @@ const MyIncident58 = new CSSEffect(
   clip.addIncident(MyIncident17, 4461);
   //image
   clip.addIncident(MyIncident18, 4461);
-  clip.addIncident(MyIncident18b, 4461);
   //extra-info
   clip.addIncident(MyIncident19, 4461);
   clip.addIncident(MyIncident19b, 4461);

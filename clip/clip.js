@@ -214,9 +214,10 @@ export const clip = new HTMLClip({
   position:absolute;
   top: 70%;
   right: 83%;
-  width:0;
-  height:0;
-  border: 3px solid #0A0144;
+  width:90px;
+  height:90px;
+  border: 8px solid #0A0144;
+  transform:scale(0);
   opacity:0;
   }
 .line {
@@ -320,9 +321,11 @@ export const clip = new HTMLClip({
 .color{
   position:absolute;
   top:50%;
-  transform: translateY(-50%);
-  width:0px;
-  height: 0px;
+  transform: translateY(-50%) scale(0);
+  width:15px;
+  height: 15px;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 .red{
   left:110%;
@@ -529,9 +532,7 @@ const MyIncident2 = new CSSEffect(
   {
     animatedAttrs: {
       opacity:0.5,
-     width:"90px",
-     height:"90px",
-     border:"8px solid #0A0144"
+      transform:{scale:1},
     },
   },
   {
@@ -845,9 +846,10 @@ const MyIncident11b = new CSSEffect(
     animatedAttrs: {
       top:"100px",
       left:"400px",
-      width:"0%",
-      height:"0%",
-      border: "3px solid #0A0144"
+      transform:{
+        scale:0
+      }
+      
     },
   },
   {
@@ -923,9 +925,7 @@ const MyIncident13b = new CSSEffect(
   {
     animatedAttrs: {
       opacity:0.5,
-      width:"90px",
-      height:"90px",
-      border:"8px solid #0A0144"
+      transform:{scale:1}
     },
   },
   {
@@ -1079,10 +1079,7 @@ const MyIncident19= new CSSEffect(
 const MyIncident19b= new CSSEffect(
   {
     animatedAttrs: {
-      width: "15px",
-      height:"15px",
-      borderRadius: "5px",
-      border: "2px solid white"
+      transform:{scale:1},
     },
   },
   {
@@ -1229,9 +1226,7 @@ const MyIncident25b = new CSSEffect(
     animatedAttrs: {
       top:"150px",
       left:"200px",
-      width:"0%",
-      height:"0%",
-      border: "3px solid #0A0144"
+      transform:{scale:0}
     },
   },
   {
@@ -1307,9 +1302,7 @@ const MyIncident28 = new CSSEffect(
   {
     animatedAttrs: {
       opacity:0.5,
-      width:"90px",
-      height:"90px",
-      border:"8px solid #0A0144"
+      transform:{scale:1}
     },
   },
   {
@@ -1476,10 +1469,7 @@ const MyIncident33= new CSSEffect(
 const MyIncident33b= new CSSEffect(
   {
     animatedAttrs: {
-      width: "15px",
-      height:"15px",
-      borderRadius: "5px",
-      border: "2px solid white"
+      transform:{scale:1},
     },
   },
   {
@@ -1679,9 +1669,7 @@ const MyIncident41b = new CSSEffect(
     animatedAttrs: {
       top:"100px",
       left:"450px",
-      width:"0%",
-      height:"0%",
-      border: "3px solid #0A0144"
+      transform:{scale:0}
     },
   },
   {
@@ -1756,9 +1744,7 @@ const MyIncident44 = new CSSEffect(
   {
     animatedAttrs: {
       opacity:0.5,
-      width:"90px",
-      height:"90px",
-      border:"8px solid #0A0144"
+      transform:{scale:1}
     },
   },
   {
@@ -1938,10 +1924,7 @@ const MyIncident50 = new CSSEffect(
 const MyIncident50b= new CSSEffect(
   {
     animatedAttrs: {
-      width: "15px",
-      height:"15px",
-      borderRadius: "5px",
-      border: "2px solid white"
+      transform:{scale:1},
     },
   },
   {
@@ -2017,9 +2000,7 @@ const MyIncident56 = new CSSEffect(
     animatedAttrs: {
       top:"50%",
       left:"35%",
-      width:"0%",
-      height:"0%",
-      border:"1px solid #0A0144",
+      transform:{scale:0},
       opacity:0
     },
   },

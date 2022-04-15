@@ -31,7 +31,8 @@ export const clip = new HTMLClip({
                                     Aliquam sit amet mi in ante molestie ultricies 
                                     placerat sed est.
             </div>
-            <div class="color-tag"> ${saparateLetters("Colors")}
+            <div class="colors">
+                <div class="color-tag"> ${saparateLetters("Colors")} </div>
                 <div class="color red"></div>
                 <div class="color black"></div>
                 <div class="color blue"></div>
@@ -89,24 +90,29 @@ export const clip = new HTMLClip({
                                         Aliquam sit amet mi in ante molestie ultricies 
                                         placerat sed est.
             </div>
-            <div class="color-tag"> ${saparateLetters("Colors")}
-            <div class="color red"></div>
-            <div class="color black"></div>
-            <div class="color blue"></div>
+             <div class="colors">
+                <div class="color-tag"> ${saparateLetters("Colors")} </div>
+                <div class="color red"></div>
+                <div class="color black"></div>
+                <div class="color blue"></div>
             </div>
             <div class="price-tag"><p>${saparateLetters("313$")}</p></div>
         </div>
     </div>
     <div class="extra-container container4">
         <div class="informations">
-            <div class="title"> <div class="title1">Smart</div><br><div class="title2">Band</div> </div>
+            <div class="title"> 
+              <div class="title1">Smart</div>
+              <div class="title2">Band</div>
+            </div>
             <div class="info"> Lorem ipsum dolor sit amet, 
                                             consectetur adipiscing elit. 
                                             Aenean iaculis viverra ligula ac cursus. 
                                             Aliquam sit amet mi in ante molestie ultricies 
                                             placerat sed est.
             </div>
-            <div class="color-tag"> ${saparateLetters("Colors")}
+             <div class="colors">
+                <div class="color-tag"> ${saparateLetters("Colors")} </div>
                 <div class="color red"></div>
                 <div class="color black"></div>
                 <div class="color blue"></div>
@@ -249,94 +255,86 @@ export const clip = new HTMLClip({
 }
 .extra-container{
   position:absolute;
-  padding-right: 60px;
-  padding-left: 60px;
-  top:0%;
-  width: 100%;
-  height: 100%;
+  width: 800px;
+  height: 450px;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
 }
 
 .informations{
   width:32%;
   font-family: Lato;
-  position:absolute;
-  top:10%;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
 }
+
 .container3 .informations{
-  top:-450px;
-  right:40%;
-  transform :translateX(60%);
+  align-items:flex-end;
 }
-.container4 .informations{
-  height:80%;
-  left:-400px;
+
+.colors{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  align-items:center;
+  gap:5px;
 }
+
 .title{
   font-size: 60px;
   font-weight:bold;
   color:{{initParams.baseColor}};
 }
+
+.container4 .title{
+  display:flex;
+  flex-direction:column;
+  gap:1px;
+ 
+}
 .container4 .title1{
+  position:relative;
+  left:-20%;
   opacity:0;
-  position:absolute;
-  left:-35px;
 }
 .container4 .title2{
+  left:20%;
   opacity:0;
-  position:absolute;
-  left:35px;
+  position:relative;
 }
 .info{
   opacity:0;
   font-size: 15px;
   margin-top:10px;
   color:{{initParams.baseColor}};
-  height:35%;
-  
-}
-.container4 .info{
-  position:absolute;
-  top:55%;
-  transform:translateY(-45%);
 }
 .container3 .title, .container3 .info{
   text-align:right;
 }
 .color-tag{
-  margin-top:10px;
-  position:absolute;
-  height:20px;
   font-size:15px;
   font-weight:bold;
   color:{{initParams.baseColor}};
 }
-.container3 .color-tag{
-  left:60%;
-}
-.container4 .color-tag{
-  top:63%;
-  transform:translate(-37%);
-  left:5%;
-}
 .color{
-  position:absolute;
-  top:50%;
-  transform: translateY(-50%) scale(0);
   width:15px;
   height: 15px;
   border: 1px solid white;
   border-radius: 5px;
+  transform:scale(0);
 }
 .red{
-  left:110%;
   background-color: red;
 }
 .black{
-  left:160%;
   background-color: black;
 }
 .blue{
-  left:210%;
   background-color: blue;
 }
 .price-tag{
@@ -351,55 +349,42 @@ export const clip = new HTMLClip({
   height:0px;
   opacity: 0;
 }
-.container2 .price-tag{
-  position:absolute;
-  top:115%;
-}
-.container3 .price-tag{
-  position:absolute;
-  left:70%;
-  top:115%;
-}
-.container4 .price-tag{
-  position:absolute;
-  top:73%;
-  transform:translate(-27%);
-  left:5%;
-}
+
 .image{
-  width:20%;
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform: translate(-50%, -50%);
+  width:30%;
+  height:100%;
+  position:relative;
 }
 
 .container2 .img, .container4 .img{
-  width:0px;
-  height:0px;
   opacity:0;
+  width:200px;
+  height:200px;
+  position:absolute;
+  top:50%;
 }
 .container2 .img{
   background:url({{initParams.smartwatchImg}});
   background-position:center;
   background-size:contain;
   background-repeat:no-repeat;
-  transform: rotate(90deg);
+  transform: translateY(-50%) rotate(90deg) scale(0);
 }
 .container4 .img{
   background:url({{initParams.bandImg}});
   background-position:center;
   background-size:contain;
   background-repeat:no-repeat;
+  transform: translateY(-50%) scale(0);
 }
 
 .container3 .img{
-  width:30px;
-  height:20px;
   position:absolute;
-  top:-300px;
-  left:-120px;
-  opacity:0;
+  top:-50%;
+  width:200px;
+  height:250px;
+  opacity:1;
+  transform: scale(0);
 }
 
 #back{
@@ -415,24 +400,10 @@ export const clip = new HTMLClip({
   background-size:contain;
   background-repeat:no-repeat;
 }
-.container2 .features{
-  position:absolute;
-  left:70%;
-  top:50%;
-  transform: translate(-30%,-50%);
+.features{
+  width:20%;
 }
-.container3 .features{
-  position:absolute;
-  left:20%;
-  top:-450px;
-  transform: translateX(-80%);
-}
-.container4 .features{
-  position:absolute;
-  left:-30%;
-  top:50%;
-  transform: translate(-30%,-50%);
-}
+
 .feature{
   display: flex;
   flex-direction: row;
@@ -1051,9 +1022,7 @@ const MyIncident18= new CSSEffect(
   {
     animatedAttrs: {
       opacity:1,
-      width:"200px",
-      height:"200px",
-      transform: { rotate: '15deg' },
+      transform: { rotate: '15deg' , scale:1},
     },
   },
   {
@@ -1314,18 +1283,6 @@ const MyIncident28 = new CSSEffect(
 const MyIncident29a = new CSSEffect(
   {
     animatedAttrs: {
-      top:"50px"
-    },
-  },
-  {
-    selector: ".container3 .informations",
-    duration: 300,
-    easing:"easeOutQuad"
-  }
-);
-const MyIncident29b = new CSSEffect(
-  {
-    animatedAttrs: {
       opacity:1,
     },
   },
@@ -1335,7 +1292,7 @@ const MyIncident29b = new CSSEffect(
     easing:"easeOutQuad"
   }
 );
-const MyIncident29c = new CSSEffect(
+const MyIncident29b = new CSSEffect(
   {
     animatedAttrs: {
       opacity:1,
@@ -1405,22 +1362,8 @@ const MyIncident30d = new CSSEffect(
     easing:"easeOutQuad"
   }
 );
-//features for 3rd slide
-const MyIncident31 = new CSSEffect(
-  {
-    animatedAttrs: {
-      top:"50%",
-      transform:{translateY:"-50%"}
-    },
-  },
-  {
-    selector: ".container3 .features",
-    duration: 300,
-    easing:"easeOutQuad"
-  }
-);
 //bullets for 3rd slide
-const MyIncident32a = new CSSEffect(
+const MyIncident31 = new CSSEffect(
   {
     animatedAttrs: {
     width:"5px",
@@ -1437,7 +1380,7 @@ const MyIncident32a = new CSSEffect(
 );
 
 //f-text for 3rd slide
-const MyIncident32b = new CSSEffect(
+const MyIncident32 = new CSSEffect(
   {
     animatedAttrs: {
       opacity:1,
@@ -1511,10 +1454,9 @@ const MyIncident35 = new CSSEffect(
 const MyIncident36 = new CSSEffect(
   {
     animatedAttrs: {
-      width:"200px",
-      height:"250px",
-      top:"-150px",
-      opacity:1
+      opacity:1,
+      top:"50%",
+      transform: { translateY:"-50%", scale: 1 },
     },
   },
   {
@@ -1526,10 +1468,9 @@ const MyIncident36 = new CSSEffect(
 const MyIncident37 = new CSSEffect(
   {
     animatedAttrs: {
-      width:"200px", 
-      height:"250px",
-      top:"-150px",
       opacity:1,
+      top:"50%",
+      transform: { translateY:"-50%",scale: 1 },
     },
   },
   {
@@ -1540,8 +1481,7 @@ const MyIncident37 = new CSSEffect(
 const MyIncident38 = new CSSEffect(
   {
     animatedAttrs: {
-      top:"-150px",
-      left:"-140px",
+      left:"-20px",
       transform: { rotate: '-10deg' },
     },
   },
@@ -1753,19 +1693,8 @@ const MyIncident44 = new CSSEffect(
     easing:"easeOutQuad"
   }
 );
+
 const MyIncident45a = new CSSEffect(
-  {
-    animatedAttrs: {
-      left:"50px"
-    },
-  },
-  {
-    selector: ".container4 .informations",
-    duration: 300,
-    easing:"easeOutQuad"
-  }
-);
-const MyIncident45b = new CSSEffect(
   {
     animatedAttrs: {
       opacity:1,
@@ -1774,11 +1703,11 @@ const MyIncident45b = new CSSEffect(
   },
   {
     selector: ".container4 .title1,.container4 .title2",
-    duration: 2000,
+    duration: 1000,
     easing:"easeOutQuad"
   }
 );
-const MyIncident45c = new CSSEffect(
+const MyIncident45b = new CSSEffect(
   {
     animatedAttrs: {
       opacity:1
@@ -1847,18 +1776,6 @@ const MyIncident46d = new CSSEffect(
     easing:"easeOutQuad"
   }
 );
-const MyIncident47 = new CSSEffect(
-  {
-    animatedAttrs: {
-     left:"70%"
-    },
-  },
-  {
-    selector: ".container4 .features",
-    duration: 300,
-    easing:"easeOutQuad"
-  }
-);
 //bullets for 4th slide
 const MyIncident48a = new CSSEffect(
   {
@@ -1896,9 +1813,7 @@ const MyIncident49 = new CSSEffect(
   {
     animatedAttrs: {
       opacity:1,
-      width:"200px",
-      height:"200px",
-      transform: { rotate: '15deg' }
+      transform: { rotate: '15deg',scale:1 }
     },
   },
   {
@@ -1951,51 +1866,20 @@ const MyIncident51= new CSSEffect(
 );
 
 //remove 4th slide
-const MyIncident53 = new CSSEffect(
+const MyIncident52 = new CSSEffect(
   {
     animatedAttrs: {
-      fontSize:"0px",
-      opacity:0
-    },
-  },
-  {
-    selector: ".container4 .title, .container4 .info,.container4 .color-tag, .container4 .price-tag .letter, .container4 .f-text",
-    duration: 600,
-    easing: [1,0,1,0.21],
-  }
-);
-
-const MyIncident54 = new CSSEffect(
-  {
-    animatedAttrs: {
-      top:"50%",
-      left:"35%",
-      width:"0%",
-      height:"0%"
+      transform:{scale:0}
     },
   },
   {
     selector: ".container4",
-    duration: 650,
-    easing: [1,0,1,0.21],
-  }
-);
-const MyIncident55 = new CSSEffect(
-  {
-    animatedAttrs: {
-      width:"0px",
-      height:"0px",
-      opacity:0
-    },
-  },
-  {
-    selector: ".container4 .price-tag, .container4 .bullet, .container4 .color, .container4 .img, .container4 .informations",
     duration: 600,
     easing: [1,0,1,0.21]
   }
 );
 //4th slide remove circles
-const MyIncident56 = new CSSEffect(
+const MyIncident53 = new CSSEffect(
   {
     animatedAttrs: {
       top:"50%",
@@ -2011,7 +1895,7 @@ const MyIncident56 = new CSSEffect(
   }
 );
 //4th slide remove lines
-const MyIncident57a = new CSSEffect(
+const MyIncident54a = new CSSEffect(
   {
     animatedAttrs: {
       top:"200px",
@@ -2027,7 +1911,7 @@ const MyIncident57a = new CSSEffect(
     easing: [1,0,1,0.21]
   }
 );
-const MyIncident57b = new CSSEffect(
+const MyIncident54b = new CSSEffect(
   {
     animatedAttrs: {
       top:"200px",
@@ -2043,7 +1927,7 @@ const MyIncident57b = new CSSEffect(
     easing: [1,0,1,0.21]
   }
 );
-const MyIncident57c = new CSSEffect(
+const MyIncident54c = new CSSEffect(
   {
     animatedAttrs: {
       bottom:"200px",
@@ -2059,7 +1943,7 @@ const MyIncident57c = new CSSEffect(
     easing: [1,0,1,0.21]
   }
 );
-const MyIncident57d = new CSSEffect(
+const MyIncident54d = new CSSEffect(
   {
     animatedAttrs: {
       bottom:"200px",
@@ -2075,7 +1959,7 @@ const MyIncident57d = new CSSEffect(
     easing: [1,0,1,0.21]
   }
 );
-const MyIncident58 = new CSSEffect(
+const MyIncident55 = new CSSEffect(
   {
     animatedAttrs: {
       visibility: "visible",
@@ -2180,18 +2064,16 @@ const MyIncident58 = new CSSEffect(
   clip.addIncident(MyIncident27, 9202);
   clip.addIncident(MyIncident28, 9202);
   //info
-  clip.addIncident(MyIncident29a, 9202);
+  clip.addIncident(MyIncident29a, 9402);
   clip.addIncident(MyIncident29b, 9402);
-  clip.addIncident(MyIncident29c, 9402);
   //lines
   clip.addIncident(MyIncident30a, 9202);
   clip.addIncident(MyIncident30b, 9202);
   clip.addIncident(MyIncident30c, 9202);
   clip.addIncident(MyIncident30d, 9202);
   //features
-  clip.addIncident(MyIncident31, 9202);
-  clip.addIncident(MyIncident32a, 9402);
-  clip.addIncident(MyIncident32b, 9402);
+  clip.addIncident(MyIncident31, 9402);
+  clip.addIncident(MyIncident32, 9402);
   //extra-info
   clip.addIncident(MyIncident33, 9202);
   clip.addIncident(MyIncident33b, 9202);
@@ -2229,16 +2111,14 @@ const MyIncident58 = new CSSEffect(
   clip.addIncident(MyIncident43,13942);
   clip.addIncident(MyIncident44,13942);
   //info
-  clip.addIncident(MyIncident45a,13942);
+  clip.addIncident(MyIncident45a,14142);
   clip.addIncident(MyIncident45b,14142);
-  clip.addIncident(MyIncident45c,14142);
   //lines
   clip.addIncident(MyIncident46a,13942);
   clip.addIncident(MyIncident46b,13942);
   clip.addIncident(MyIncident46c,13942);
   clip.addIncident(MyIncident46d,13942);
   //features
-  clip.addIncident(MyIncident47,13942);
   clip.addIncident(MyIncident48a,14142);
   clip.addIncident(MyIncident48b,14142);
   //image
@@ -2250,15 +2130,13 @@ const MyIncident58 = new CSSEffect(
 
 //remove 4th slide
   //container
-  clip.addIncident(MyIncident53, 18000);
-  clip.addIncident(MyIncident54, 18000);
-  clip.addIncident(MyIncident55, 18000);
+  clip.addIncident(MyIncident52, 18000);
   //circles
-  clip.addIncident(MyIncident56, 18000);
+  clip.addIncident(MyIncident53, 18000);
   //lines
-  clip.addIncident(MyIncident57a, 18000);
-  clip.addIncident(MyIncident57b, 18000);
-  clip.addIncident(MyIncident57c, 18000);
-  clip.addIncident(MyIncident57d, 18000);
-  clip.addIncident(MyIncident58, 18650);
+  clip.addIncident(MyIncident54a, 18000);
+  clip.addIncident(MyIncident54b, 18000);
+  clip.addIncident(MyIncident54c, 18000);
+  clip.addIncident(MyIncident54d, 18000);
+  clip.addIncident(MyIncident55, 18650);
  

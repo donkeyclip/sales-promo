@@ -1,20 +1,22 @@
-import {HTMLClip,CSSEffect} from "@donkeyclip/motorcortex";
+import { HTMLClip, CSSEffect } from "@donkeyclip/motorcortex";
 import { initParams } from "./initParams";
 
-function saparateLetters(word){
-  let letterDivs="";
-  for(let i=0;i<word.length;i++){
-    letterDivs +=`<div class="letter"> ${word[i]}</div>`
+function saparateLetters(word) {
+  let letterDivs = "";
+  for (let i = 0; i < word.length; i++) {
+    letterDivs += `<div class="letter"> ${word[i]}</div>`;
   }
-  return letterDivs; 
+  return letterDivs;
 }
 export const clip = new HTMLClip({
   html: `
   <div class="container">
     <div class="textbox">
         <div class="text1">Smart</div>
-        <div class="text2"> ${saparateLetters("Sale")} ${saparateLetters("Promo")}</div>
-        <div class="text3"><p>company</p></div>
+        <div class="text2"> ${saparateLetters("Sale")} ${saparateLetters(
+    "Promo"
+  )}</div>
+        <div class="text3">company</div>
     </div>
     <div class="circle big-circle"></div>
     <div class="circle small-circle"></div>
@@ -24,7 +26,9 @@ export const clip = new HTMLClip({
     <div class="line line4"></div>
     <div class="extra-container container2">
         <div class="informations">
-            <div class="title"> ${saparateLetters("Smart")}<br>${saparateLetters("Watch")}</div>
+            <div class="title"> ${saparateLetters(
+              "Smart"
+            )}<br>${saparateLetters("Watch")}</div>
             <div class="info"> Lorem ipsum dolor sit amet, 
                                     consectetur adipiscing elit. 
                                     Aenean iaculis viverra ligula ac cursus. 
@@ -83,7 +87,9 @@ export const clip = new HTMLClip({
             <div class="img" id="front"></div>
         </div>
         <div class="informations">
-            <div class="title"> ${saparateLetters("Smart")}<br>${saparateLetters("Phone")} </div>
+            <div class="title"> ${saparateLetters(
+              "Smart"
+            )}<br>${saparateLetters("Phone")} </div>
             <div class="info"> Lorem ipsum dolor sit amet, 
                                         consectetur adipiscing elit. 
                                         Aenean iaculis viverra ligula ac cursus. 
@@ -150,13 +156,17 @@ export const clip = new HTMLClip({
     position: relative;
   }
   .textbox{
+    position:absolute;
     text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    top:50%;
+    width:100%;
+    transform:translateY(-50%);
+    gap:30px;
   }
   .text1 {
-    position:absolute;
-    top:35%;
-    right:10%;
-    transform: translate(50%,-65%);
     font-size: 30px;
     font-family: Lato;
     overflow: hidden;
@@ -165,14 +175,10 @@ export const clip = new HTMLClip({
     color:{{initParams.baseColor}};
   }
   .text2{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform :translate(-50%,-50%);
+    width:50%;
     font-size: 60px;
     font-family: Lato;
     font-weight:bold;
-    align-self:flex-start;
     white-space:nowrap;
     color:{{initParams.baseColor}};
   }
@@ -181,26 +187,15 @@ export const clip = new HTMLClip({
    opacity:0;
   }
   .text3{
-    position:absolute;
-    top:55%;
-    left:50%;
-    transform :translateX(-50%);
+    width:15%;
+    transform : scale(0);
     color:{{initParams.baseColor}};
     background-color: {{initParams.secondaryColor}};
-    width:30px;
-    height:30px;
+    font-size:25px;
+    font-family:Ubuntu;
+    padding:5px 10px;
     border-radius:8px;
     opacity:0;
-  }
-  .text3>p{
-    position:absolute;
-    font-size: 0px;
-    font-family: Ubuntu;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    padding:0;
-    margin:0;
   }
   .circle{
     display: block;
@@ -472,1671 +467,1574 @@ a:hover{
   fonts: [
     {
       type: "google-font",
-      src:
-      "https://fonts.googleapis.com/css2?family=Lato&family=Ubuntu&display=swap"
-    }
+      src: "https://fonts.googleapis.com/css2?family=Lato&family=Ubuntu&display=swap",
+    },
   ],
   host: document.getElementById("clip"),
   initParams: initParams[0].value,
   containerParams: {
     width: "800px",
     height: "450px",
-  }
+  },
 });
 
 //first slide
-const MyIncident1 = new CSSEffect(
+const sl1BigCircle = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.5,
-     top:"-35%",
-     right:"-15%"
+      opacity: 0.5,
+      top: "-35%",
+      right: "-15%",
     },
   },
   {
     selector: ".big-circle",
     duration: 2220,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident2 = new CSSEffect(
+const sl1SmallCircle = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.5,
-      transform:{scale:1},
+      opacity: 0.5,
+      transform: { scale: 1 },
     },
   },
   {
     selector: ".small-circle",
     duration: 2220,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident3a = new CSSEffect(
+const sl1Line1 = new CSSEffect(
   {
     animatedAttrs: {
-    width:"80px",
-    top:"75px",
-    left:"70px"
+      width: "80px",
+      top: "75px",
+      left: "70px",
     },
   },
   {
     selector: ".line1",
     duration: 2220,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident3b = new CSSEffect(
+const sl1Line2 = new CSSEffect(
   {
     animatedAttrs: {
-    width:"80px",
-    top:"95px",
-    right:"610px"
+      width: "80px",
+      top: "95px",
+      right: "610px",
     },
   },
   {
     selector: ".line2",
     duration: 2220,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident3c = new CSSEffect(
+const sl1Line3 = new CSSEffect(
   {
     animatedAttrs: {
-    width:"80px",
-    bottom:"80px",
-    left:"680px"
+      width: "80px",
+      bottom: "80px",
+      left: "680px",
     },
   },
   {
     selector: ".line3",
     duration: 2220,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident3d = new CSSEffect(
+const sl1Line4 = new CSSEffect(
   {
     animatedAttrs: {
-    width:"80px",
-    bottom:"60px",
-    right:"60px"
+      width: "80px",
+      bottom: "60px",
+      right: "60px",
     },
   },
   {
     selector: ".line4",
     duration: 2220,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident4 = new CSSEffect(
+const text1appear = new CSSEffect(
   {
     animatedAttrs: {
-      right:"50%",
-      opacity:1
+      opacity: 1,
+      width: "100%",
     },
   },
   {
     selector: ".text1",
-    duration:2220,
-    easing:"easeOutQuad"
-  }
-);
-const MyIncident4b = new CSSEffect(
-  {
-    animatedAttrs: {
-      width:"100%",
-    },
-  },
-  {
-    selector: ".text1",
-    duration:2000,
+    duration: 2220,
+    easing: "easeOutQuad",
   }
 );
 
-const MyIncident5 = new CSSEffect(
+const text2appear = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1
+      opacity: 1,
     },
   },
   {
-    selector:".text2>.letter",
-    delay:"@stagger(0, 2100)",
+    selector: ".text2>.letter",
+    delay: "@stagger(0, 2100)",
     duration: 300,
     easing: "linear",
   }
 );
-const MyIncident6 = new CSSEffect(
+const text3appear = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
-      
+      opacity: 1,
+      transform: { scale: 1 },
     },
   },
   {
     selector: ".text3",
-    duration:2220,
-    easing: "linear",
-  }
-);
-const MyIncident6b = new CSSEffect(
-  {
-    animatedAttrs: {
-      width: "110px",
-      padding:'5px',
-      top:"65%"
-    },
-  },
-  {
-    selector: ".text3",
-    duration:2220,
-    easing: "linear",
-  }
-);
-
-const MyIncident7 = new CSSEffect(
-  {
-    animatedAttrs: {
-      fontSize:"25px"
-    },
-  },
-  {
-    selector: ".text3>p",
     duration: 2220,
     easing: "linear",
   }
 );
+
 //remove first slide
-const MyIncident9a = new CSSEffect(
+
+const removeText = new CSSEffect(
   {
     animatedAttrs: {
-      fontSize:'900%',
-      opacity:0
+      transform: { scale: 7 },
+      opacity: 0,
     },
   },
   {
-    selector: ".text1,.text2,.text3",
-    duration:1500,
-    delay:550,
-    easing: [1,0,1,0],
-  }
-);
-const MyIncident9b = new CSSEffect(
-  {
-    animatedAttrs: {
-     top:"10%"
-    },
-  },
-  {
-    selector: ".text1",
-    duration:1500,
-    delay:550,
-    easing: [1,0,1,0],
-  }
-);
-const MyIncident9c = new CSSEffect(
-  {
-    animatedAttrs: {
-     top:"85%"
-    },
-  },
-  {
-    selector: ".text3",
-    duration:1500,
-    delay:550,
-    easing: [1,0,1,0],
-  }
-);
-const MyIncident9d = new CSSEffect(
-  {
-    animatedAttrs: {
-     width:"200px",
-     height:"50px",
-    },
-  },
-  {
-    selector: ".text3",
-    duration:1500,
-    delay:550,
-    easing: [1,0,1,0],
+    selector: ".textbox",
+    duration: 1500,
+    delay: 550,
+    easing: [1, 0, 1, 0],
   }
 );
 
-const MyIncident9e = new CSSEffect(
+const remove1BigCircle = new CSSEffect(
   {
     animatedAttrs: {
-     fontSize:"30px"
-    },
-  },
-  {
-    selector: ".text3>p",
-    duration:1500,
-    delay:550,
-    easing: [1,0,1,0],
-  }
-);
-const MyIncident10a = new CSSEffect(
-  {
-    animatedAttrs: {
-     top:"-45%",
-     right:"-25%",
-     opacity:0
+      top: "-45%",
+      right: "-25%",
+      opacity: 0,
     },
   },
   {
     selector: ".big-circle",
     duration: 2000,
-    easing: [1,0,1,0],
+    easing: [1, 0, 1, 0],
   }
 );
-const MyIncident10b = new CSSEffect(
+const remove1SmallCircle = new CSSEffect(
   {
     animatedAttrs: {
-     top:"100%",
-     left:"-20%",
-     opacity:0
+      top: "100%",
+      left: "-20%",
+      opacity: 0,
     },
   },
   {
     selector: ".small-circle",
     duration: 2000,
-    easing: [1,0,1,0],
+    easing: [1, 0, 1, 0],
   }
 );
-const MyIncident10c = new CSSEffect(
+const remove1Line1 = new CSSEffect(
   {
     animatedAttrs: {
-    opacity:0,
-     top:"-20px",
-     left:"-120px"
+      opacity: 0,
+      top: "-20px",
+      left: "-120px",
     },
   },
   {
     selector: ".line1",
     duration: 2000,
-    easing: [1,0,1,0],
+    easing: [1, 0, 1, 0],
   }
 );
-const MyIncident10d = new CSSEffect(
+const remove1Line2 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0,
-     top:"0px",
-     right:"800px"
+      opacity: 0,
+      top: "0px",
+      right: "800px",
     },
   },
   {
     selector: ".line2",
     duration: 2000,
-    easing: [1,0,1,0],
+    easing: [1, 0, 1, 0],
   }
 );
-const MyIncident10e = new CSSEffect(
+const remove1Line3 = new CSSEffect(
   {
     animatedAttrs: {
-    opacity:0,
-     bottom:"0px",
-     left:"820px"
+      opacity: 0,
+      bottom: "0px",
+      left: "820px",
     },
   },
   {
     selector: ".line3",
     duration: 2000,
-    easing: [1,0,1,0],
+    easing: [1, 0, 1, 0],
   }
 );
-const MyIncident10f = new CSSEffect(
+const remove1Line4 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0,
-     bottom:"-20px",
-     right:"-80px"
+      opacity: 0,
+      bottom: "-20px",
+      right: "-80px",
     },
   },
   {
     selector: ".line4",
     duration: 2000,
-    easing: [1,0,1,0],
+    easing: [1, 0, 1, 0],
   }
 );
 //reset circle and lines
-const MyIncident11 = new CSSEffect(
+const reset1BigCircle = new CSSEffect(
   {
     animatedAttrs: {
-      top:"-200px",
-      left:"-200px"
+      top: "-200px",
+      left: "-200px",
     },
   },
   {
     selector: ".big-circle",
-    duration: 1
+    duration: 1,
   }
 );
-const MyIncident11b = new CSSEffect(
+const reset1SmallCircle = new CSSEffect(
   {
     animatedAttrs: {
-      top:"100px",
-      left:"400px",
-      transform:{
-        scale:0
-      }
-      
+      top: "100px",
+      left: "400px",
+      transform: {
+        scale: 0,
+      },
     },
   },
   {
     selector: ".small-circle",
-    duration: 1
+    duration: 1,
   }
 );
-const MyIncident12a = new CSSEffect(
+const reset1Line1 = new CSSEffect(
   {
     animatedAttrs: {
-      top:"70px",
-      left:"400px"
+      top: "70px",
+      left: "400px",
     },
   },
   {
     selector: ".line1",
-    duration: 1
+    duration: 1,
   }
 );
 
-const MyIncident12b = new CSSEffect(
+const reset1Line2 = new CSSEffect(
   {
     animatedAttrs: {
-      top:"90px",
-      right:"50px"
+      top: "90px",
+      right: "50px",
     },
   },
   {
     selector: ".line2",
-    duration: 1
+    duration: 1,
   }
 );
-const MyIncident12c = new CSSEffect(
+const reset1Line3 = new CSSEffect(
   {
     animatedAttrs: {
-      bottom:"100px",
-      left:"300px"
+      bottom: "100px",
+      left: "300px",
     },
   },
   {
     selector: ".line3",
-    duration: 1
+    duration: 1,
   }
 );
-const MyIncident12d = new CSSEffect(
+const reset1Line4 = new CSSEffect(
   {
     animatedAttrs: {
-      bottom:"80px",
-      right:"200px"
+      bottom: "80px",
+      right: "200px",
     },
   },
   {
     selector: ".line4",
-    duration: 1
+    duration: 1,
   }
 );
 //2nd slide
-const MyIncident13 = new CSSEffect(
+const sl2BigCircle = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.5,
-      top:"-35%",
-      left:"-25%"
+      opacity: 0.5,
+      top: "-35%",
+      left: "-25%",
     },
   },
   {
     selector: ".big-circle",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident13b = new CSSEffect(
+const sl2SmallCircle = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.5,
-      transform:{scale:1}
+      opacity: 0.5,
+      transform: { scale: 1 },
     },
   },
   {
     selector: ".small-circle",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 
-const MyIncident14 = new CSSEffect(
+const sl2Info = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1
+      opacity: 1,
     },
   },
   {
     selector: ".container2 .info",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident14b = new CSSEffect(
+const sl2Title = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1
+      opacity: 1,
     },
   },
   {
     selector: ".container2 .title>.letter",
-    delay:"@stagger(0, 2700)",
+    delay: "@stagger(0, 2700)",
     duration: 1000,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 
 //lines for 2nd slide
-const MyIncident15a = new CSSEffect(
+const sl2Line1 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.3,
-      left:"600px"
+      opacity: 0.3,
+      left: "600px",
     },
   },
   {
     selector: ".line1",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident15b = new CSSEffect(
+const sl2Line2 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.3,
-      right:"100px"
+      opacity: 0.3,
+      right: "100px",
     },
   },
   {
     selector: ".line2",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident15c = new CSSEffect(
+const sl2Line3 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.3,
-      left:"350px"
+      opacity: 0.3,
+      left: "350px",
     },
   },
   {
     selector: ".line3",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident15d = new CSSEffect(
+const sl2Line4 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.3,
-      right:"350px"
+      opacity: 0.3,
+      right: "350px",
     },
   },
   {
     selector: ".line4",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 //bullets for 2nd slide
-const MyIncident16 = new CSSEffect(
+const sl2Bullets = new CSSEffect(
   {
     animatedAttrs: {
-    width:"5px",
-    height:"5px",
-    borderRadius:"5px"
+      width: "5px",
+      height: "5px",
+      borderRadius: "5px",
     },
   },
   {
     selector: ".container2 .bullet",
-    delay:"@stagger(0, 1500)",
+    delay: "@stagger(0, 1500)",
     duration: 600,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 
 //f-text for 2nd slide
-const MyIncident17 = new CSSEffect(
+const sl2Features = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
-      marginLeft:"2px"
+      opacity: 1,
+      marginLeft: "2px",
     },
   },
   {
     selector: ".container2 .f-text",
-    delay:"@stagger(0, 1500)",
+    delay: "@stagger(0, 1500)",
     duration: 1300,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 
-const MyIncident18= new CSSEffect(
+const sl2Img = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
-      transform: { rotate: '15deg' , scale:1},
+      opacity: 1,
+      transform: { rotate: "15deg", scale: 1 },
     },
   },
   {
     selector: ".container2 .img",
     duration: 3300,
-      easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 //extra info for the 2nd slide
-const MyIncident19= new CSSEffect(
+const sl2ColorTag = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1
+      opacity: 1,
     },
   },
   {
     selector: ".container2 .color-tag>.letter",
-    delay:"@stagger(0, 900)",
+    delay: "@stagger(0, 900)",
     duration: 700,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident19b= new CSSEffect(
+const sl2Colors = new CSSEffect(
   {
     animatedAttrs: {
-      transform:{scale:1},
+      transform: { scale: 1 },
     },
   },
   {
     selector: ".container2 .color",
-    delay:"@stagger(0, 500)",
+    delay: "@stagger(0, 500)",
     duration: 1500,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident20= new CSSEffect(
+const sl2PriceTagWrapper = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
-      width:"80px",
-      height:"30px",
-      borderRadius:"10px"
+      opacity: 1,
+      width: "80px",
+      height: "30px",
+      borderRadius: "10px",
     },
   },
   {
     selector: ".container2 .price-tag",
     duration: 500,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident21 = new CSSEffect(
+const sl2PriceTag = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1
+      opacity: 1,
     },
   },
   {
     selector: ".container2 .price-tag .letter",
     duration: 500,
-    delay:"@stagger(500, 1000)",
-      easing:"easeOutQuad"
+    delay: "@stagger(500, 1000)",
+    easing: "easeOutQuad",
   }
 );
 //remove 2nd slide
-const MyIncident22 = new CSSEffect(
+const removeContainer2 = new CSSEffect(
   {
     animatedAttrs: {
-      top:"100%"
+      top: "100%",
     },
   },
   {
     selector: ".container2",
     duration: 900,
-    easing: [1,0,1,0.21],
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident23a = new CSSEffect(
+const remove2Line1 = new CSSEffect(
   {
     animatedAttrs: {
-     opacity:0,
-     top:"520px"
+      opacity: 0,
+      top: "520px",
     },
   },
   {
     selector: ".line1",
     duration: 900,
-    easing: [1,0,1,0.21],
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident23b = new CSSEffect(
+const remove2Line2 = new CSSEffect(
   {
     animatedAttrs: {
-     opacity:0,
-     top:"540px"
+      opacity: 0,
+      top: "540px",
     },
   },
   {
     selector: ".line2",
     duration: 900,
-    easing: [1,0,1,0.21],
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident23c = new CSSEffect(
+const remove2Line3 = new CSSEffect(
   {
     animatedAttrs: {
-     opacity:0,
-     bottom:"-350px"
+      opacity: 0,
+      bottom: "-350px",
     },
   },
   {
     selector: ".line3",
     duration: 900,
-    easing: [1,0,1,0.21],
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident23d = new CSSEffect(
+const remove2Line4 = new CSSEffect(
   {
     animatedAttrs: {
-     opacity:0,
-     bottom:"-370px"
+      opacity: 0,
+      bottom: "-370px",
     },
   },
   {
     selector: ".line4",
     duration: 900,
-    easing: [1,0,1,0.21],
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident24a = new CSSEffect(
+const remove2BigCircle = new CSSEffect(
   {
     animatedAttrs: {
-    top:"100%",
-    opacity:0
+      top: "100%",
+      opacity: 0,
     },
   },
   {
     selector: ".big-circle",
     duration: 900,
-    easing: [1,0,1,0.21],
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident24b = new CSSEffect(
+const remove2SmallCircle = new CSSEffect(
   {
     animatedAttrs: {
-    top:"550px",
-    opacity:0
+      top: "550px",
+      opacity: 0,
     },
   },
   {
     selector: ".small-circle",
     duration: 900,
-    easing: [1,0,1,0.21],
+    easing: [1, 0, 1, 0.21],
   }
 );
 //reset circle and lines
-const MyIncident25 = new CSSEffect(
+const reset2BigCircle = new CSSEffect(
   {
     animatedAttrs: {
-      left:"100%",
-      top:"-55%",
+      left: "100%",
+      top: "-55%",
     },
   },
   {
     selector: ".big-circle",
-    duration: 1
+    duration: 1,
   }
 );
-const MyIncident25b = new CSSEffect(
+const reset2SmallCircle = new CSSEffect(
   {
     animatedAttrs: {
-      top:"150px",
-      left:"200px",
-      transform:{scale:0}
+      top: "150px",
+      left: "200px",
+      transform: { scale: 0 },
     },
   },
   {
     selector: ".small-circle",
-    duration: 1
+    duration: 1,
   }
 );
-const MyIncident26a = new CSSEffect(
+const reset2Line1 = new CSSEffect(
   {
     animatedAttrs: {
-      top:"-10px",
-      left:"-10px",
+      top: "-10px",
+      left: "-10px",
     },
   },
   {
     selector: ".line1",
-    duration: 1
+    duration: 1,
   }
 );
 
-const MyIncident26b = new CSSEffect(
+const reset2Line2 = new CSSEffect(
   {
     animatedAttrs: {
-      top:"5px",
-      right:"550px"
+      top: "5px",
+      right: "550px",
     },
   },
   {
     selector: ".line2",
-    duration: 1
+    duration: 1,
   }
 );
-const MyIncident26c = new CSSEffect(
+const reset2Line3 = new CSSEffect(
   {
     animatedAttrs: {
-      bottom:"150px",
-      left:"350px"
+      bottom: "150px",
+      left: "350px",
     },
   },
   {
     selector: ".line3",
-    duration: 1
+    duration: 1,
   }
 );
-const MyIncident26d = new CSSEffect(
+const reset2Line4 = new CSSEffect(
   {
     animatedAttrs: {
-      bottom:"120px",
-      right:"60px"
+      bottom: "120px",
+      right: "60px",
     },
   },
   {
     selector: ".line4",
-    duration: 1
+    duration: 1,
   }
 );
 //3rd slide
-const MyIncident27 = new CSSEffect(
+const sl3BigCircle = new CSSEffect(
   {
     animatedAttrs: {
-      left:"75%",
-      top:"-30%",
-      opacity:0.5
+      left: "75%",
+      top: "-30%",
+      opacity: 0.5,
     },
   },
   {
     selector: ".big-circle",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident28 = new CSSEffect(
+const sl3SmallCircle = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.5,
-      transform:{scale:1}
+      opacity: 0.5,
+      transform: { scale: 1 },
     },
   },
   {
     selector: ".small-circle",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident29a = new CSSEffect(
+const sl3Info = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
+      opacity: 1,
     },
   },
   {
     selector: ".container3 .info",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident29b = new CSSEffect(
+const sl3Title = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
+      opacity: 1,
     },
   },
   {
     selector: ".container3 .title>.letter",
-    delay:"@stagger(0, 2700)",
+    delay: "@stagger(0, 2700)",
     duration: 1000,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 //lines for 3rd slide
-const MyIncident30a = new CSSEffect(
+const sl3Line1 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.3,
-      top:"60px",
-      left:"100px"
+      opacity: 0.3,
+      top: "60px",
+      left: "100px",
     },
   },
   {
     selector: ".line1",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident30b = new CSSEffect(
+const sl3Line2 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.3,
-      top:"80px",
-      right:"580px"
+      opacity: 0.3,
+      top: "80px",
+      right: "580px",
     },
   },
   {
     selector: ".line2",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident30c = new CSSEffect(
+const sl3Line3 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.3,
-      bottom:"35px",
-      left:"500px"
+      opacity: 0.3,
+      bottom: "35px",
+      left: "500px",
     },
   },
   {
     selector: ".line3",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident30d = new CSSEffect(
+const sl3Line4 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.3,
-      bottom:"10px",
-      right:"180px"
+      opacity: 0.3,
+      bottom: "10px",
+      right: "180px",
     },
   },
   {
     selector: ".line4",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 //bullets for 3rd slide
-const MyIncident31 = new CSSEffect(
+const sl3Bullets = new CSSEffect(
   {
     animatedAttrs: {
-    width:"5px",
-    height:"5px",
-    borderRadius:"5px"
+      width: "5px",
+      height: "5px",
+      borderRadius: "5px",
     },
   },
   {
     selector: ".container3 .bullet",
-    delay:"@stagger(0, 1500)",
+    delay: "@stagger(0, 1500)",
     duration: 600,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 
 //f-text for 3rd slide
-const MyIncident32 = new CSSEffect(
+const sl3Features = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
-      marginLeft:"2px"
+      opacity: 1,
+      marginLeft: "2px",
     },
   },
   {
     selector: ".container3 .f-text",
-    delay:"@stagger(0, 1500)",
+    delay: "@stagger(0, 1500)",
     duration: 1300,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 
 //3rd slide extra info
-const MyIncident33= new CSSEffect(
+const sl3ColorTag = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1
+      opacity: 1,
     },
   },
   {
     selector: ".container3 .color-tag>.letter",
-    delay:"@stagger(0, 900)",
+    delay: "@stagger(0, 900)",
     duration: 700,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident33b= new CSSEffect(
+const sl3Colors = new CSSEffect(
   {
     animatedAttrs: {
-      transform:{scale:1},
+      transform: { scale: 1 },
     },
   },
   {
     selector: ".container3 .color",
-    delay:"@stagger(0, 500)",
+    delay: "@stagger(0, 500)",
     duration: 1500,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident34= new CSSEffect(
+const sl3PriceTagWrapper = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
-      width:"80px",
-      height:"30px",
-      borderRadius:"10px"
+      opacity: 1,
+      width: "80px",
+      height: "30px",
+      borderRadius: "10px",
     },
   },
   {
     selector: ".container3 .price-tag",
     duration: 500,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident35 = new CSSEffect(
+const sl3PriceTag = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1
+      opacity: 1,
     },
   },
   {
     selector: ".container3 .price-tag .letter",
     duration: 500,
-    delay:"@stagger(500, 1000)",
-    easing:"easeOutQuad"
+    delay: "@stagger(500, 1000)",
+    easing: "easeOutQuad",
   }
 );
 //3rd slide images
-const MyIncident36 = new CSSEffect(
+const sl3Img = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
-      top:"50%",
-      transform: { translateY:"-50%", scale: 1 },
+      opacity: 1,
+      top: "50%",
+      transform: { translateY: "-50%", scale: 1 },
     },
   },
   {
-    selector: ".container3 #front",
+    selector: ".container3 #front,.container3 #back",
     duration: 600,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident37 = new CSSEffect(
+
+const sl3ImgTransform = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
-      top:"50%",
-      transform: { translateY:"-50%",scale: 1 },
-    },
-  },
-  {
-    selector: ".container3 #back",
-    duration: 1
-  }
-);
-const MyIncident38 = new CSSEffect(
-  {
-    animatedAttrs: {
-      left:"-20px",
-      transform: { rotate: '-10deg' },
+      left: "-20px",
+      transform: { rotate: "-10deg" },
     },
   },
   {
     selector: ".container3 #back",
     duration: 900,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 //remove 3rd slide
-const MyIncident39a = new CSSEffect(
+const removeContainer3 = new CSSEffect(
   {
     animatedAttrs: {
-      left:"100%"
+      left: "100%",
     },
   },
   {
     selector: ".container3",
     duration: 900,
-    easing: [1,0,1,0.21]
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident39b = new CSSEffect(
+const remove3SmallCircle = new CSSEffect(
   {
     animatedAttrs: {
-      left:"1000px"
+      left: "1000px",
     },
   },
   {
     selector: ".small-circle",
     duration: 900,
-    easing: [1,0,1,0.21]
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident39c = new CSSEffect(
+const remove3BigCircle = new CSSEffect(
   {
     animatedAttrs: {
-      left:"175%"
+      left: "175%",
     },
   },
   {
     selector: ".big-circle",
     duration: 900,
-    easing: [1,0,1,0.21],
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident39d = new CSSEffect(
+const remove3Line1 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0,
-      left:"900px"
+      opacity: 0,
+      left: "900px",
     },
   },
   {
     selector: ".line1",
     duration: 900,
-    easing: [1,0,1,0.21]
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident39e = new CSSEffect(
+const remove3Line2 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0,
-      right:"-220px"
+      opacity: 0,
+      right: "-220px",
     },
   },
   {
     selector: ".line2",
     duration: 900,
-    easing: [1,0,1,0.21]
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident39f = new CSSEffect(
+const remove3Line3 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0,
-      left:"1300px"
+      opacity: 0,
+      left: "1300px",
     },
   },
   {
     selector: ".line3",
     duration: 900,
-    easing: [1,0,1,0.21]
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident39g = new CSSEffect(
+const remove3Line4 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0,
-      right:"-620px"
+      opacity: 0,
+      right: "-620px",
     },
   },
   {
     selector: ".line4",
     duration: 900,
-    easing: [1,0,1,0.21]
+    easing: [1, 0, 1, 0.21],
   }
 );
 //reset circle and lines
-const MyIncident40 = new CSSEffect(
+const reset3Opacity = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0
+      opacity: 0,
     },
   },
   {
     selector: ".big-circle,.small-circle,.line",
-    duration: 1
+    duration: 1,
   }
 );
-const MyIncident41 = new CSSEffect(
+const reset3BigCircle = new CSSEffect(
   {
     animatedAttrs: {
-      left:"-30%",
-      top:"-75%"
+      left: "-30%",
+      top: "-75%",
     },
   },
   {
     selector: ".big-circle",
-    duration: 1
+    duration: 1,
   }
 );
-const MyIncident41b = new CSSEffect(
+const reset3SmallCircle = new CSSEffect(
   {
     animatedAttrs: {
-      top:"100px",
-      left:"450px",
-      transform:{scale:0}
+      top: "100px",
+      left: "450px",
+      transform: { scale: 0 },
     },
   },
   {
     selector: ".small-circle",
-    duration: 1
+    duration: 1,
   }
 );
-const MyIncident42a = new CSSEffect(
+const reset3Line1 = new CSSEffect(
   {
     animatedAttrs: {
-      top:"10px",
-      left:"400px",
+      top: "10px",
+      left: "400px",
     },
   },
   {
     selector: ".line1",
-    duration: 1
+    duration: 1,
   }
 );
 
-const MyIncident42b = new CSSEffect(
+const reset3Line2 = new CSSEffect(
   {
     animatedAttrs: {
-      right:"100px",
+      right: "100px",
     },
   },
   {
     selector: ".line2",
-    duration: 1
+    duration: 1,
   }
 );
-const MyIncident42c = new CSSEffect(
+const reset3Line3 = new CSSEffect(
   {
     animatedAttrs: {
-      bottom:"20px",
-      left:"-10px"
+      bottom: "20px",
+      left: "-10px",
     },
   },
   {
     selector: ".line3",
-    duration: 1
+    duration: 1,
   }
 );
-const MyIncident42d = new CSSEffect(
+const reset3Line4 = new CSSEffect(
   {
     animatedAttrs: {
-      bottom:"15px",
-      right:"500px"
+      bottom: "15px",
+      right: "500px",
     },
   },
   {
     selector: ".line4",
-    duration: 1
+    duration: 1,
   }
 );
 //4th slide
-const MyIncident43 = new CSSEffect(
+const sl4BigCircle = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.5,
-      top:"-35%",
-      left:"-25%"
+      opacity: 0.5,
+      top: "-35%",
+      left: "-25%",
     },
   },
   {
     selector: ".big-circle",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident44 = new CSSEffect(
+const sl4SmallCircle = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.5,
-      transform:{scale:1}
+      opacity: 0.5,
+      transform: { scale: 1 },
     },
   },
   {
     selector: ".small-circle",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 
-const MyIncident45a = new CSSEffect(
+const sl4Title = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
-      left:"0px"
+      opacity: 1,
+      left: "0px",
     },
   },
   {
     selector: ".container4 .title1,.container4 .title2",
     duration: 1000,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident45b = new CSSEffect(
+const sl4Info = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1
+      opacity: 1,
     },
   },
   {
     selector: ".container4 .info",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 //lines for 4th slide
-const MyIncident46a = new CSSEffect(
+const sl4Line1 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.3,
-      top:"15px",
-      left:"650px"
+      opacity: 0.3,
+      top: "15px",
+      left: "650px",
     },
   },
   {
     selector: ".line1",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident46b = new CSSEffect(
+const sl4Line2 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.3,
-      top:"35px",
-      right:"40px"
+      opacity: 0.3,
+      top: "35px",
+      right: "40px",
     },
   },
   {
     selector: ".line2",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident46c = new CSSEffect(
+const sl4Line3 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.3,
-      bottom:"35px",
-      left:"150px"
+      opacity: 0.3,
+      bottom: "35px",
+      left: "150px",
     },
   },
   {
     selector: ".line3",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident46d = new CSSEffect(
+const sl4Line4 = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:0.3,
-      bottom:"15px",
-      right:"550px"
+      opacity: 0.3,
+      bottom: "15px",
+      right: "550px",
     },
   },
   {
     selector: ".line4",
     duration: 3839,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 //bullets for 4th slide
-const MyIncident48a = new CSSEffect(
+const sl4Bullets = new CSSEffect(
   {
     animatedAttrs: {
-    width:"5px",
-    height:"5px",
-    borderRadius:"5px"
+      width: "5px",
+      height: "5px",
+      borderRadius: "5px",
     },
   },
   {
     selector: ".container4 .bullet",
-    delay:"@stagger(0, 1500)",
+    delay: "@stagger(0, 1500)",
     duration: 600,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 
 //f-text for 4th slide
-const MyIncident48b = new CSSEffect(
+const sl4Features = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
-      marginLeft:"2px"
+      opacity: 1,
+      marginLeft: "2px",
     },
   },
   {
     selector: ".container4 .f-text",
-    delay:"@stagger(0, 1500)",
+    delay: "@stagger(0, 1500)",
     duration: 1300,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 
-const MyIncident49 = new CSSEffect(
+const sl4Img = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
-      transform: { rotate: '15deg',scale:1 }
+      opacity: 1,
+      transform: { rotate: "15deg", scale: 1 },
     },
   },
   {
     selector: ".container4 .img",
     duration: 3300,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
 //extra info for the 4th slide
-const MyIncident50 = new CSSEffect(
+const sl4ColorTag = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1
+      opacity: 1,
     },
   },
   {
-    selector: ".container4 .letter",
-    delay:"@stagger(0, 900)",
+    selector: ".container4 .color-tag>.letter",
+    delay: "@stagger(0, 900)",
     duration: 700,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident50b= new CSSEffect(
+const sl4Colors = new CSSEffect(
   {
     animatedAttrs: {
-      transform:{scale:1},
+      transform: { scale: 1 },
     },
   },
   {
     selector: ".container4 .color",
-    delay:"@stagger(0, 500)",
+    delay: "@stagger(0, 500)",
     duration: 1500,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
   }
 );
-const MyIncident51= new CSSEffect(
+const sl4PriceTagWrapper = new CSSEffect(
   {
     animatedAttrs: {
-      opacity:1,
-      width:"80px",
-      height:"30px",
-      borderRadius:"10px"
+      opacity: 1,
+      width: "80px",
+      height: "30px",
+      borderRadius: "10px",
     },
   },
   {
     selector: ".container4 .price-tag",
     duration: 500,
-    easing:"easeOutQuad"
+    easing: "easeOutQuad",
+  }
+);
+
+const sl4PriceTag = new CSSEffect(
+  {
+    animatedAttrs: {
+      opacity: 1,
+    },
+  },
+  {
+    selector: ".container4 .price-tag .letter",
+    duration: 500,
+    delay: "@stagger(500, 1000)",
+    easing: "easeOutQuad",
   }
 );
 
 //remove 4th slide
-const MyIncident52 = new CSSEffect(
+const removeContainer4 = new CSSEffect(
   {
     animatedAttrs: {
-      transform:{scale:0}
+      transform: { scale: 0 },
     },
   },
   {
     selector: ".container4",
     duration: 600,
-    easing: [1,0,1,0.21]
+    easing: [1, 0, 1, 0.21],
   }
 );
 //4th slide remove circles
-const MyIncident53 = new CSSEffect(
+const remove4Circles = new CSSEffect(
   {
     animatedAttrs: {
-      top:"50%",
-      left:"35%",
-      transform:{scale:0},
-      opacity:0
+      top: "50%",
+      left: "35%",
+      transform: { scale: 0 },
+      opacity: 0,
     },
   },
   {
     selector: ".small-circle , .big-circle",
     duration: 650,
-    easing: [1,0,1,0.21]
+    easing: [1, 0, 1, 0.21],
   }
 );
 //4th slide remove lines
-const MyIncident54a = new CSSEffect(
+const remove4Line1 = new CSSEffect(
   {
     animatedAttrs: {
-      top:"200px",
-      left:"400px",
-      width:"0%",
-      height:"0%",
-      opacity:0
+      top: "200px",
+      left: "400px",
+      width: "0%",
+      height: "0%",
+      opacity: 0,
     },
   },
   {
     selector: ".line1",
-    duration:650,
-    easing: [1,0,1,0.21]
+    duration: 650,
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident54b = new CSSEffect(
+const remove4Line2 = new CSSEffect(
   {
     animatedAttrs: {
-      top:"200px",
-      right:"400px",
-      width:"0%",
-      height:"0%",
-      opacity:0
+      top: "200px",
+      right: "400px",
+      width: "0%",
+      height: "0%",
+      opacity: 0,
     },
   },
   {
     selector: ".line2",
     duration: 650,
-    easing: [1,0,1,0.21]
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident54c = new CSSEffect(
+const remove4Line3 = new CSSEffect(
   {
     animatedAttrs: {
-      bottom:"200px",
-      left:"400px",
-      height:"0%",
-      width:"0%",
-      opacity:0
+      bottom: "200px",
+      left: "400px",
+      height: "0%",
+      width: "0%",
+      opacity: 0,
     },
   },
   {
     selector: ".line3",
     duration: 650,
-    easing: [1,0,1,0.21]
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident54d = new CSSEffect(
+const remove4Line4 = new CSSEffect(
   {
     animatedAttrs: {
-      bottom:"200px",
-      right:"400px",
-      width:"0%",
-      height:"0%",
-      opacity:0
+      bottom: "200px",
+      right: "400px",
+      width: "0%",
+      height: "0%",
+      opacity: 0,
     },
   },
   {
     selector: ".line4",
     duration: 650,
-    easing: [1,0,1,0.21]
+    easing: [1, 0, 1, 0.21],
   }
 );
-const MyIncident55 = new CSSEffect(
+const appearCTAButton = new CSSEffect(
   {
     animatedAttrs: {
       visibility: "visible",
-      opacity:1
+      opacity: 1,
     },
   },
   {
     selector: "a",
     duration: 2000,
-    easing: "linear"
+    easing: "linear",
   }
 );
-//1st slide 
-  //circles
-  clip.addIncident(MyIncident1, 0);
-  clip.addIncident(MyIncident2, 0);
-  //lines
-  clip.addIncident(MyIncident3a, 0);
-  clip.addIncident(MyIncident3b, 0);
-  clip.addIncident(MyIncident3c, 0);
-  clip.addIncident(MyIncident3d, 0);
-  //text
-  clip.addIncident(MyIncident4, 0);
-  clip.addIncident(MyIncident4b,1300);
-  clip.addIncident(MyIncident5, 0);
-  clip.addIncident(MyIncident6, 0);
-  clip.addIncident(MyIncident6b, 0);
-  clip.addIncident(MyIncident7, 100);
+//1st slide
+//circles
+clip.addIncident(sl1BigCircle, 0);
+clip.addIncident(sl1SmallCircle, 0);
+//lines
+clip.addIncident(sl1Line1, 0);
+clip.addIncident(sl1Line2, 0);
+clip.addIncident(sl1Line3, 0);
+clip.addIncident(sl1Line4, 0);
+//text
+clip.addIncident(text1appear, 0);
+clip.addIncident(text2appear, 0);
+clip.addIncident(text3appear, 0);
 
 //remove 1st slide
-  //text
-  clip.addIncident(MyIncident9a, 2320);
-  clip.addIncident(MyIncident9b, 2320);
-  clip.addIncident(MyIncident9c, 2320);
-  clip.addIncident(MyIncident9d, 2320);
-  clip.addIncident(MyIncident9e, 2320);
-  //lines and circles
-  clip.addIncident(MyIncident10a, 2320);
-  clip.addIncident(MyIncident10b, 2320);
-  clip.addIncident(MyIncident10c, 2320);
-  clip.addIncident(MyIncident10d, 2320);
-  clip.addIncident(MyIncident10e, 2320);
-  clip.addIncident(MyIncident10f, 2320);
+//text
+clip.addIncident(removeText, 2320);
+//lines and circles
+clip.addIncident(remove1BigCircle, 2320);
+clip.addIncident(remove1SmallCircle, 2320);
+clip.addIncident(remove1Line1, 2320);
+clip.addIncident(remove1Line2, 2320);
+clip.addIncident(remove1Line3, 2320);
+clip.addIncident(remove1Line4, 2320);
 
 //reset positions(prepare for 2nd slide)
-  //circles
-  clip.addIncident(MyIncident11, 4460);
-  clip.addIncident(MyIncident11b, 4460);
-  //lines
-  clip.addIncident(MyIncident12a, 4460);
-  clip.addIncident(MyIncident12b, 4460);
-  clip.addIncident(MyIncident12c, 4460);
-  clip.addIncident(MyIncident12d, 4460);
+//circles
+clip.addIncident(reset1BigCircle, 4460);
+clip.addIncident(reset1SmallCircle, 4460);
+//lines
+clip.addIncident(reset1Line1, 4460);
+clip.addIncident(reset1Line2, 4460);
+clip.addIncident(reset1Line3, 4460);
+clip.addIncident(reset1Line4, 4460);
 
 //2nd slide
-  //circles
-  clip.addIncident(MyIncident13, 4461);
-  clip.addIncident(MyIncident13b, 4461);
-  //info
-  clip.addIncident(MyIncident14, 4461);
-  clip.addIncident(MyIncident14b, 4461);
-  //lines
-  clip.addIncident(MyIncident15a, 4461);
-  clip.addIncident(MyIncident15b, 4461);
-  clip.addIncident(MyIncident15c, 4461);
-  clip.addIncident(MyIncident15d, 4461);
-  //features
-  clip.addIncident(MyIncident16, 4461);
-  clip.addIncident(MyIncident17, 4461);
-  //image
-  clip.addIncident(MyIncident18, 4461);
-  //extra-info
-  clip.addIncident(MyIncident19, 4461);
-  clip.addIncident(MyIncident19b, 4461);
-  clip.addIncident(MyIncident20, 4461);
-  clip.addIncident(MyIncident21, 4461);
+//circles
+clip.addIncident(sl2BigCircle, 4461);
+clip.addIncident(sl2SmallCircle, 4461);
+//info
+clip.addIncident(sl2Info, 4461);
+clip.addIncident(sl2Title, 4461);
+//lines
+clip.addIncident(sl2Line1, 4461);
+clip.addIncident(sl2Line2, 4461);
+clip.addIncident(sl2Line3, 4461);
+clip.addIncident(sl2Line4, 4461);
+//features
+clip.addIncident(sl2Bullets, 4461);
+clip.addIncident(sl2Features, 4461);
+//image
+clip.addIncident(sl2Img, 4461);
+//extra-info
+clip.addIncident(sl2ColorTag, 4461);
+clip.addIncident(sl2Colors, 4461);
+clip.addIncident(sl2PriceTagWrapper, 4461);
+clip.addIncident(sl2PriceTag, 4461);
 
 //remove 2nd slide
-  //container
-  clip.addIncident(MyIncident22, 8300);
-  //lines
-  clip.addIncident(MyIncident23a, 8300);
-  clip.addIncident(MyIncident23b, 8300);
-  clip.addIncident(MyIncident23c, 8300);
-  clip.addIncident(MyIncident23d, 8300);
-  //circles
-  clip.addIncident(MyIncident24a, 8300);
-  clip.addIncident(MyIncident24b, 8300);
+//container
+clip.addIncident(removeContainer2, 8300);
+//lines
+clip.addIncident(remove2Line1, 8300);
+clip.addIncident(remove2Line2, 8300);
+clip.addIncident(remove2Line3, 8300);
+clip.addIncident(remove2Line4, 8300);
+//circles
+clip.addIncident(remove2BigCircle, 8300);
+clip.addIncident(remove2SmallCircle, 8300);
 
 //reset positions(prepare for 3rd slide)
-  //circles
-  clip.addIncident(MyIncident25, 9201);
-  clip.addIncident(MyIncident25b, 9201);
-  //lines
-  clip.addIncident(MyIncident26a, 9201);
-  clip.addIncident(MyIncident26b, 9201);
-  clip.addIncident(MyIncident26c, 9201);
-  clip.addIncident(MyIncident26d, 9201);
+//circles
+clip.addIncident(reset2BigCircle, 9201);
+clip.addIncident(reset2SmallCircle, 9201);
+//lines
+clip.addIncident(reset2Line1, 9201);
+clip.addIncident(reset2Line2, 9201);
+clip.addIncident(reset2Line3, 9201);
+clip.addIncident(reset2Line4, 9201);
 
 //3rd slide
-  //circles
-  clip.addIncident(MyIncident27, 9202);
-  clip.addIncident(MyIncident28, 9202);
-  //info
-  clip.addIncident(MyIncident29a, 9402);
-  clip.addIncident(MyIncident29b, 9402);
-  //lines
-  clip.addIncident(MyIncident30a, 9202);
-  clip.addIncident(MyIncident30b, 9202);
-  clip.addIncident(MyIncident30c, 9202);
-  clip.addIncident(MyIncident30d, 9202);
-  //features
-  clip.addIncident(MyIncident31, 9402);
-  clip.addIncident(MyIncident32, 9402);
-  //extra-info
-  clip.addIncident(MyIncident33, 9202);
-  clip.addIncident(MyIncident33b, 9202);
-  clip.addIncident(MyIncident34, 9202);
-  clip.addIncident(MyIncident35, 9202);
-  //images
-  clip.addIncident(MyIncident36, 9202);
-  clip.addIncident(MyIncident37, 11002);
-  clip.addIncident(MyIncident38, 11003);
+//circles
+clip.addIncident(sl3BigCircle, 9202);
+clip.addIncident(sl3SmallCircle, 9202);
+//info
+clip.addIncident(sl3Info, 9402);
+clip.addIncident(sl3Title, 9402);
+//lines
+clip.addIncident(sl3Line1, 9202);
+clip.addIncident(sl3Line2, 9202);
+clip.addIncident(sl3Line3, 9202);
+clip.addIncident(sl3Line4, 9202);
+//features
+clip.addIncident(sl3Bullets, 9402);
+clip.addIncident(sl3Features, 9402);
+//extra-info
+clip.addIncident(sl3ColorTag, 9202);
+clip.addIncident(sl3Colors, 9202);
+clip.addIncident(sl3PriceTagWrapper, 9202);
+clip.addIncident(sl3PriceTag, 9202);
+//images
+clip.addIncident(sl3Img, 9202);
+clip.addIncident(sl3ImgTransform, 11003);
 
 //remove 3rd slide
-  clip.addIncident(MyIncident39a, 13041);
-  //circles
-  clip.addIncident(MyIncident39b, 13041);
-  clip.addIncident(MyIncident39c, 13041);
-  //lines
-  clip.addIncident(MyIncident39d, 13041);
-  clip.addIncident(MyIncident39e, 13041);
-  clip.addIncident(MyIncident39f, 13041);
-  clip.addIncident(MyIncident39g, 13041);
+clip.addIncident(removeContainer3, 13041);
+//circles
+clip.addIncident(remove3SmallCircle, 13041);
+clip.addIncident(remove3BigCircle, 13041);
+//lines
+clip.addIncident(remove3Line1, 13041);
+clip.addIncident(remove3Line2, 13041);
+clip.addIncident(remove3Line3, 13041);
+clip.addIncident(remove3Line4, 13041);
 
 //reset posotions(prepare for 4th slide)
-  clip.addIncident(MyIncident40, 13941);
-  //circles
-  clip.addIncident(MyIncident41, 13941);
-  clip.addIncident(MyIncident41b, 13941);
-  //lines
-  clip.addIncident(MyIncident42a, 13941);
-  clip.addIncident(MyIncident42b, 13941);
-  clip.addIncident(MyIncident42c, 13941);
-  clip.addIncident(MyIncident42d, 13941);
+clip.addIncident(reset3Opacity, 13941);
+//circles
+clip.addIncident(reset3BigCircle, 13941);
+clip.addIncident(reset3SmallCircle, 13941);
+//lines
+clip.addIncident(reset3Line1, 13941);
+clip.addIncident(reset3Line2, 13941);
+clip.addIncident(reset3Line3, 13941);
+clip.addIncident(reset3Line4, 13941);
 
 //4th slide
-  //circles
-  clip.addIncident(MyIncident43,13942);
-  clip.addIncident(MyIncident44,13942);
-  //info
-  clip.addIncident(MyIncident45a,14142);
-  clip.addIncident(MyIncident45b,14142);
-  //lines
-  clip.addIncident(MyIncident46a,13942);
-  clip.addIncident(MyIncident46b,13942);
-  clip.addIncident(MyIncident46c,13942);
-  clip.addIncident(MyIncident46d,13942);
-  //features
-  clip.addIncident(MyIncident48a,14142);
-  clip.addIncident(MyIncident48b,14142);
-  //image
-  clip.addIncident(MyIncident49,13942);
-  //extra-info
-  clip.addIncident(MyIncident50,13942);
-  clip.addIncident(MyIncident50b,13942);
-  clip.addIncident(MyIncident51,13942);
+//circles
+clip.addIncident(sl4BigCircle, 13942);
+clip.addIncident(sl4SmallCircle, 13942);
+//info
+clip.addIncident(sl4Title, 14142);
+clip.addIncident(sl4Info, 14142);
+//lines
+clip.addIncident(sl4Line1, 13942);
+clip.addIncident(sl4Line2, 13942);
+clip.addIncident(sl4Line3, 13942);
+clip.addIncident(sl4Line4, 13942);
+//features
+clip.addIncident(sl4Bullets, 14142);
+clip.addIncident(sl4Features, 14142);
+//image
+clip.addIncident(sl4Img, 13942);
+//extra-info
+clip.addIncident(sl4ColorTag, 13942);
+clip.addIncident(sl4Colors, 13942);
+clip.addIncident(sl4PriceTagWrapper, 13942);
+clip.addIncident(sl4PriceTag, 13942);
 
 //remove 4th slide
-  //container
-  clip.addIncident(MyIncident52, 18000);
-  //circles
-  clip.addIncident(MyIncident53, 18000);
-  //lines
-  clip.addIncident(MyIncident54a, 18000);
-  clip.addIncident(MyIncident54b, 18000);
-  clip.addIncident(MyIncident54c, 18000);
-  clip.addIncident(MyIncident54d, 18000);
-  clip.addIncident(MyIncident55, 18650);
- 
+//container
+clip.addIncident(removeContainer4, 18000);
+//circles
+clip.addIncident(remove4Circles, 18000);
+//lines
+clip.addIncident(remove4Line1, 18000);
+clip.addIncident(remove4Line2, 18000);
+clip.addIncident(remove4Line3, 18000);
+clip.addIncident(remove4Line4, 18000);
+clip.addIncident(appearCTAButton, 18650);

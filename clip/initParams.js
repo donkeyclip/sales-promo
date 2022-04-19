@@ -6,17 +6,16 @@ export const initParams = [
       secondaryColor:"#9975e0",
       backgroundColor:"#284AC7",
       colorWrapper:"white",
+      colorTag:"Colors",
       shoppingBagIcon:
         "https://donkeyclip.github.io/sales-promo/demo/assets/shopping_bag_icon.png",
       intro:{
           title1:"Smart",
-          title2a:"Sale",
-          title2b:"Promo",
+          title2:["Sale","Promo"],
           company:"company"
       },
       product1:{
-        namea:"Smart",
-        nameb:"Watch",
+        name:["Smart","Watch"],
         info:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean iaculis viverra ligula ac cursus. Aliquam sit amet mi in ante molestie ultricies placerat sed est.",
         colors:[
           "red","black","blue"
@@ -28,8 +27,7 @@ export const initParams = [
         img:"https://donkeyclip.github.io/sales-promo/demo/assets/smartwatch.png",
       },
       product2:{
-        namea:"Smart",
-        nameb:"Phone",
+        name:["Smart","Phone"],
         info:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean iaculis viverra ligula ac cursus. Aliquam sit amet mi in ante molestie ultricies placerat sed est.",
         colors:[
           "pink","black","blue"

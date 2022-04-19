@@ -1,19 +1,25 @@
 import { HTMLClip, CSSEffect } from "@donkeyclip/motorcortex";
 import { initParams } from "./initParams";
 
-function saparateLetters(word) {
-  let letterDivs = "";
-  for (let i = 0; i < word.length; i++) {
-    letterDivs += `<div class="letter"> ${word[i]}</div>`;
-  }
-  return letterDivs;
-}
+// function saparateLetters(word) {
+//   let letterDivs = "";
+//   for (let i = 0; i < word.length; i++) {
+//     letterDivs += `<div class="letter"> ${word[i]}</div>`;
+//   }
+//   return letterDivs;
+// }
 export const clip = new HTMLClip({
   html: `
   <div class="container">
     <div class="textbox">
         <div class="text1">{{initParams.intro.title1}}</div>
-        <div class="text2"> ${saparateLetters(initParams[0].value.intro.title2a)} ${saparateLetters(initParams[0].value.intro.title2b)}</div>
+        <div class="text2">
+              <div class="word" mc-for="key,item" mc-of="initParams.intro.title2">
+                <div class="letter" mc-for="key,letter" mc-of="item">
+                  {{letter}}
+                </div>
+              </div>
+        </div>
         <div class="text3">{{initParams.intro.company}}</div>
     </div>
     <div class="circle big-circle"></div>
@@ -24,14 +30,24 @@ export const clip = new HTMLClip({
     <div class="line line4"></div>
     <div class="extra-container container2">
         <div class="informations">
-            <div class="title"> ${saparateLetters(initParams[0].value.product1.namea)}<br>${saparateLetters(initParams[0].value.product1.nameb)}</div>
+            <div class="title">
+              <div class="word" mc-for="key,item" mc-of="initParams.product2.name">
+                <div class="letter" mc-for="key,letter" mc-of="item">
+                  {{letter}}
+                </div>
+              </div>
+            </div>
             <div class="info"> {{initParams.product1.info}}
             </div>
             <div class="colors">
-                <div class="color-tag"> ${saparateLetters("Colors")} </div>
+                <div class="color-tag">
+                  <div class="letter" mc-for="key,item" mc-of="initParams.colorTag">{{item}}</div> 
+                </div>
                 <div class="color" mc-for="key,item" mc-of="initParams.product1.colors" style="background-color:{{item}};"></div>
             </div>
-            <div class="price-tag"><p>${saparateLetters(initParams[0].value.product1.price)}</p></div>
+            <div class="price-tag"><p> <div class="letter" mc-for="key,item" mc-of="initParams.product1.price">
+            {{item}}
+          </div></p></div>
         </div>
         <div class="image"><div class="img"></div></div>
         <div class="features">
@@ -53,16 +69,24 @@ export const clip = new HTMLClip({
             <div class="img" id="front"></div>
         </div>
         <div class="informations">
-            <div class="title"> ${saparateLetters(
-            initParams[0].value.product2.namea
-            )}<br>${saparateLetters(initParams[0].value.product2.nameb)} </div>
+            <div class="title">
+              <div class="word" mc-for="key,item" mc-of="initParams.product2.name">
+                <div class="letter" mc-for="key,letter" mc-of="item">
+                  {{letter}}
+                </div>
+              </div>
+            </div>
             <div class="info">{{initParams.product2.info}}
             </div>
              <div class="colors">
-                <div class="color-tag"> ${saparateLetters("Colors")} </div>
+                <div class="color-tag">
+                  <div class="letter" mc-for="key,item" mc-of="initParams.colorTag">{{item}}</div> 
+                </div>
                 <div class="color" mc-for="key,item" mc-of="initParams.product2.colors" style="background-color:{{item}};"></div>
             </div>
-            <div class="price-tag"><p>${saparateLetters(initParams[0].value.product2.price)}</p></div>
+            <div class="price-tag"><p> <div class="letter" mc-for="key,item" mc-of="initParams.product2.price">
+            {{item}}
+          </div></p></div>
         </div>
     </div>
     <div class="extra-container container4">
@@ -74,10 +98,14 @@ export const clip = new HTMLClip({
             <div class="info">{{initParams.product3.info}}
             </div>
              <div class="colors">
-                <div class="color-tag"> ${saparateLetters("Colors")} </div>
+                <div class="color-tag"> 
+                  <div class="letter" mc-for="key,item" mc-of="initParams.colorTag">{{item}}</div> 
+                </div>
                 <div class="color" mc-for="key,item" mc-of="initParams.product3.colors" style="background-color:{{item}};"></div>
             </div>
-            <div class="price-tag"><p>${saparateLetters(initParams[0].value.product3.price)}</p></div>
+            <div class="price-tag"><p> <div class="letter" mc-for="key,item" mc-of="initParams.product3.price">
+            {{item}}
+          </div></p></div>
         </div>
         <div class="image"><div class="img"></div></div>
         <div class="features">
@@ -117,6 +145,10 @@ export const clip = new HTMLClip({
     color:{{initParams.baseColor}};
   }
   .text2{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    gap:14px;
     width:50%;
     font-size: 60px;
     font-family: Lato;
@@ -518,7 +550,7 @@ const text2appear = new CSSEffect(
     },
   },
   {
-    selector: ".text2>.letter",
+    selector: ".text2 .letter",
     delay: "@stagger(0, 2100)",
     duration: 300,
     easing: "linear",
@@ -764,7 +796,7 @@ const sl2Title = new CSSEffect(
     },
   },
   {
-    selector: ".container2 .title>.letter",
+    selector: ".container2 .title .letter",
     delay: "@stagger(0, 2700)",
     duration: 1000,
     easing: "easeOutQuad",
@@ -878,7 +910,7 @@ const sl2ColorTag = new CSSEffect(
     },
   },
   {
-    selector: ".container2 .color-tag>.letter",
+    selector: ".container2 .color-tag .letter",
     delay: "@stagger(0, 900)",
     duration: 700,
     easing: "easeOutQuad",
@@ -1138,7 +1170,7 @@ const sl3Title = new CSSEffect(
     },
   },
   {
-    selector: ".container3 .title>.letter",
+    selector: ".container3 .title .letter",
     delay: "@stagger(0, 2700)",
     duration: 1000,
     easing: "easeOutQuad",
@@ -1242,7 +1274,7 @@ const sl3ColorTag = new CSSEffect(
     },
   },
   {
-    selector: ".container3 .color-tag>.letter",
+    selector: ".container3 .color-tag .letter",
     delay: "@stagger(0, 900)",
     duration: 700,
     easing: "easeOutQuad",
@@ -1657,7 +1689,7 @@ const sl4ColorTag = new CSSEffect(
     },
   },
   {
-    selector: ".container4 .color-tag>.letter",
+    selector: ".container4 .color-tag .letter",
     delay: "@stagger(0, 900)",
     duration: 700,
     easing: "easeOutQuad",

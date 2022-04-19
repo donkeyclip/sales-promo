@@ -12,11 +12,9 @@ export const clip = new HTMLClip({
   html: `
   <div class="container">
     <div class="textbox">
-        <div class="text1">Smart</div>
-        <div class="text2"> ${saparateLetters("Sale")} ${saparateLetters(
-    "Promo"
-  )}</div>
-        <div class="text3">company</div>
+        <div class="text1">{{initParams.intro.title1}}</div>
+        <div class="text2"> ${saparateLetters(initParams[0].value.intro.title2a)} ${saparateLetters(initParams[0].value.intro.title2b)}</div>
+        <div class="text3">{{initParams.intro.company}}</div>
     </div>
     <div class="circle big-circle"></div>
     <div class="circle small-circle"></div>
@@ -26,61 +24,29 @@ export const clip = new HTMLClip({
     <div class="line line4"></div>
     <div class="extra-container container2">
         <div class="informations">
-            <div class="title"> ${saparateLetters(
-              "Smart"
-            )}<br>${saparateLetters("Watch")}</div>
-            <div class="info"> Lorem ipsum dolor sit amet, 
-                                    consectetur adipiscing elit. 
-                                    Aenean iaculis viverra ligula ac cursus. 
-                                    Aliquam sit amet mi in ante molestie ultricies 
-                                    placerat sed est.
+            <div class="title"> ${saparateLetters(initParams[0].value.product1.namea)}<br>${saparateLetters(initParams[0].value.product1.nameb)}</div>
+            <div class="info"> {{initParams.product1.info}}
             </div>
             <div class="colors">
                 <div class="color-tag"> ${saparateLetters("Colors")} </div>
-                <div class="color red"></div>
-                <div class="color black"></div>
-                <div class="color blue"></div>
+                <div class="color" mc-for="key,item" mc-of="initParams.product1.colors" style="background-color:{{item}};"></div>
             </div>
-            <div class="price-tag"><p>${saparateLetters("235$")}</p></div>
+            <div class="price-tag"><p>${saparateLetters(initParams[0].value.product1.price)}</p></div>
         </div>
         <div class="image"><div class="img"></div></div>
         <div class="features">
-            <div class="feature">
-                <div class="bullet b1"></div>
-                <div class="f-text f1">Touch Screen</div>
-            </div>
-            <div class="feature">
-                <div class="bullet b2"></div>
-                <div class="f-text f2">4G</div>
-            </div>
-            <div class="feature">
-                <div class="bullet b3"></div>
-                <div class="f-text f3">Bluetooth</div>
-            </div>
-            <div class="feature">
-                <div class="bullet b4"></div>
-                <div class="f-text f4">Camer</div>
-            </div>
+          <div class="feature" mc-for="key,item" mc-of="initParams.product1.features">
+              <div class="bullet"></div>
+              <div class="f-text">{{item}}</div>
+          </div>
         </div>
     </div>
     <div class="extra-container container3">
         <div class="features">
-            <div class="feature">
-                <div class="bullet b1"></div>
-                <div class="f-text f1">Screen 6,0 inch</div>
-            </div>
-            <div class="feature">
-                <div class="bullet b2"></div>
-                <div class="f-text f2">5G</div>
-            </div>
-            <div class="feature">
-                <div class="bullet b3"></div>
-                <div class="f-text f3">Nfc</div>
-            </div>
-            <div class="feature">
-                <div class="bullet b4"></div>
-                <div class="f-text f4">128/6</div>
-            </div>
+          <div class="feature" mc-for="key,item" mc-of="initParams.product2.features">
+              <div class="bullet"></div>
+              <div class="f-text">{{item}}</div>
+          </div>
         </div>
         <div class="image">
             <div class="img" id="back"></div>
@@ -88,61 +54,37 @@ export const clip = new HTMLClip({
         </div>
         <div class="informations">
             <div class="title"> ${saparateLetters(
-              "Smart"
-            )}<br>${saparateLetters("Phone")} </div>
-            <div class="info"> Lorem ipsum dolor sit amet, 
-                                        consectetur adipiscing elit. 
-                                        Aenean iaculis viverra ligula ac cursus. 
-                                        Aliquam sit amet mi in ante molestie ultricies 
-                                        placerat sed est.
+            initParams[0].value.product2.namea
+            )}<br>${saparateLetters(initParams[0].value.product2.nameb)} </div>
+            <div class="info">{{initParams.product2.info}}
             </div>
              <div class="colors">
                 <div class="color-tag"> ${saparateLetters("Colors")} </div>
-                <div class="color red"></div>
-                <div class="color black"></div>
-                <div class="color blue"></div>
+                <div class="color" mc-for="key,item" mc-of="initParams.product2.colors" style="background-color:{{item}};"></div>
             </div>
-            <div class="price-tag"><p>${saparateLetters("313$")}</p></div>
+            <div class="price-tag"><p>${saparateLetters(initParams[0].value.product2.price)}</p></div>
         </div>
     </div>
     <div class="extra-container container4">
         <div class="informations">
             <div class="title"> 
-              <div class="title1">Smart</div>
-              <div class="title2">Band</div>
+              <div class="title1">{{initParams.product3.namea}}</div>
+              <div class="title2">{{initParams.product3.nameb}}</div>
             </div>
-            <div class="info"> Lorem ipsum dolor sit amet, 
-                                            consectetur adipiscing elit. 
-                                            Aenean iaculis viverra ligula ac cursus. 
-                                            Aliquam sit amet mi in ante molestie ultricies 
-                                            placerat sed est.
+            <div class="info">{{initParams.product3.info}}
             </div>
              <div class="colors">
                 <div class="color-tag"> ${saparateLetters("Colors")} </div>
-                <div class="color red"></div>
-                <div class="color black"></div>
-                <div class="color blue"></div>
+                <div class="color" mc-for="key,item" mc-of="initParams.product3.colors" style="background-color:{{item}};"></div>
             </div>
-            <div class="price-tag"><p>${saparateLetters("235$")}</p></div>
+            <div class="price-tag"><p>${saparateLetters(initParams[0].value.product3.price)}</p></div>
         </div>
         <div class="image"><div class="img"></div></div>
         <div class="features">
-            <div class="feature">
-                <div class="bullet b1"></div>
-                <div class="f-text f1">Touch Screen</div>
-            </div>
-            <div class="feature">
-                <div class="bullet b2"></div>
-                <div class="f-text f2">4G</div>
-            </div>
-            <div class="feature">
-                <div class="bullet b3"></div>
-                <div class="f-text f3">Bluetooth</div>
-            </div>
-            <div class="feature">
-                <div class="bullet b4"></div>
-                <div class="f-text f4">Camer</div>
-            </div>
+          <div class="feature" mc-for="key,item" mc-of="initParams.product3.features">
+              <div class="bullet"></div>
+              <div class="f-text">{{item}}</div>
+          </div>
         </div>
     </div>
     <a href="https://motorcortexjs.com/"><span>BUY NOW</span> <div class="img"></div></a>
@@ -187,7 +129,7 @@ export const clip = new HTMLClip({
    opacity:0;
   }
   .text3{
-    width:15%;
+   
     transform : scale(0);
     color:{{initParams.baseColor}};
     background-color: {{initParams.secondaryColor}};
@@ -319,18 +261,9 @@ export const clip = new HTMLClip({
 .color{
   width:15px;
   height: 15px;
-  border: 1px solid white;
+  border: 1px solid {{initParams.colorWrapper}};
   border-radius: 5px;
   transform:scale(0);
-}
-.red{
-  background-color: red;
-}
-.black{
-  background-color: black;
-}
-.blue{
-  background-color: blue;
 }
 .price-tag{
   display:flex;
@@ -359,14 +292,14 @@ export const clip = new HTMLClip({
   top:50%;
 }
 .container2 .img{
-  background:url({{initParams.smartwatchImg}});
+  background:url({{initParams.product1.img}});
   background-position:center;
   background-size:contain;
   background-repeat:no-repeat;
   transform: translateY(-50%) rotate(90deg) scale(0);
 }
 .container4 .img{
-  background:url({{initParams.bandImg}});
+  background:url({{initParams.product3.img}});
   background-position:center;
   background-size:contain;
   background-repeat:no-repeat;
@@ -383,20 +316,22 @@ export const clip = new HTMLClip({
 }
 
 #back{
-  background:url({{initParams.smartphoneBack}});
+  background:url({{initParams.product2.img1}});
   background-position:center;
   background-size:contain;
   background-repeat:no-repeat;
 }
 
 #front{
-  background:url({{initParams.smartphoneFront}});
+  background:url({{initParams.product2.img2}});
   background-position:center;
   background-size:contain;
   background-repeat:no-repeat;
 }
 .features{
   width:20%;
+  display:flex;
+  flex-direction:column;
 }
 
 .feature{

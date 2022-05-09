@@ -1,13 +1,7 @@
 import { HTMLClip, CSSEffect } from "@donkeyclip/motorcortex";
 import { initParams } from "./initParams";
+import initParamsValidationRules from "./initParamsValidationRules";
 
-// function saparateLetters(word) {
-//   let letterDivs = "";
-//   for (let i = 0; i < word.length; i++) {
-//     letterDivs += `<div class="letter"> ${word[i]}</div>`;
-//   }
-//   return letterDivs;
-// }
 export const clip = new HTMLClip({
   html: `
   <div class="container">
@@ -438,6 +432,7 @@ a:hover{
     },
   ],
   host: document.getElementById("clip"),
+  initParamsValidationRules,
   initParams: initParams[0].value,
   containerParams: {
     width: "800px",

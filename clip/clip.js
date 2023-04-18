@@ -1,6 +1,8 @@
-import { HTMLClip, CSSEffect } from "@donkeyclip/motorcortex";
+import { HTMLClip, CSSEffect, setCSSCore } from "@donkeyclip/motorcortex";
 import { initParams } from "./initParams";
 import initParamsValidationRules from "./initParamsValidationRules";
+// import AnimePluginDefinition from "@donkeyclip/motorcortex-anime";
+// setCSSCore(AnimePluginDefinition.CSSEffect);
 
 export const clip = new HTMLClip({
   html: `
@@ -398,7 +400,6 @@ a{
   font-size: 25px;
   font-weight:bold;
   font-family: Ubuntu;
-  visibility: hidden;
   box-shadow:0 0 5px #ff1cac;
   opacity:0;
 }
@@ -447,6 +448,10 @@ const sl1BigCircle = new CSSEffect(
       opacity: 0.5,
       top: "-35%",
       right: "-15%",
+    },
+    initialValues: {
+      top: "-70%",
+      right: "-30%",
     },
   },
   {
@@ -603,6 +608,10 @@ const remove1SmallCircle = new CSSEffect(
       left: "-20%",
       opacity: 0,
     },
+    initialValues: {
+      top: "70%",
+      left: "5%",
+    },
   },
   {
     selector: ".small-circle",
@@ -670,8 +679,8 @@ const remove1Line4 = new CSSEffect(
 const reset1BigCircle = new CSSEffect(
   {
     animatedAttrs: {
-      top: "-200px",
-      left: "-200px",
+      top: "-17%",
+      left: "-17%",
     },
   },
   {
@@ -1768,8 +1777,8 @@ const remove4Line1 = new CSSEffect(
     animatedAttrs: {
       top: "200px",
       left: "400px",
-      width: "0%",
-      height: "0%",
+      width: "0px",
+      height: "0px",
       opacity: 0,
     },
   },
@@ -1784,8 +1793,8 @@ const remove4Line2 = new CSSEffect(
     animatedAttrs: {
       top: "200px",
       right: "400px",
-      width: "0%",
-      height: "0%",
+      width: "0px",
+      height: "0px",
       opacity: 0,
     },
   },
@@ -1800,8 +1809,8 @@ const remove4Line3 = new CSSEffect(
     animatedAttrs: {
       bottom: "200px",
       left: "400px",
-      height: "0%",
-      width: "0%",
+      height: "0px",
+      width: "0px",
       opacity: 0,
     },
   },
@@ -1816,8 +1825,8 @@ const remove4Line4 = new CSSEffect(
     animatedAttrs: {
       bottom: "200px",
       right: "400px",
-      width: "0%",
-      height: "0%",
+      width: "0px",
+      height: "0px",
       opacity: 0,
     },
   },
@@ -1830,7 +1839,6 @@ const remove4Line4 = new CSSEffect(
 const appearCTAButton = new CSSEffect(
   {
     animatedAttrs: {
-      visibility: "visible",
       opacity: 1,
     },
   },
